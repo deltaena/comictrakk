@@ -1,6 +1,6 @@
-import 'package:comictrakk/metron/metron_service.dart';
 import 'package:comictrakk/objects/Series/pojos/series_preview.dart';
 import 'package:comictrakk/objects/Series/widgets/series_preview_list_item.dart';
+import 'package:comictrakk/services/metron/metron_service.dart' show MetronService;
 import 'package:flutter/material.dart';
 
 

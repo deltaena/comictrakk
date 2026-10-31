@@ -1,8 +1,10 @@
-import 'package:comictrakk/metron/metron_service.dart';
 import 'package:comictrakk/objects/Issue/pojos/issue_preview.dart';
 import 'package:comictrakk/objects/Issue/widgets/issue_preview_list_item.dart';
 import 'package:comictrakk/objects/Series/pojos/series_detail.dart';
 import 'package:comictrakk/objects/Series/pojos/series_preview.dart';
+import 'package:comictrakk/objects/enum_variables/track_status.dart';
+import 'package:comictrakk/services/metron/metron_service.dart';
+import 'package:comictrakk/services/storage/sqlite_service.dart';
 import 'package:flutter/material.dart';
 
 class SeriesPage extends StatefulWidget {
@@ -72,8 +74,22 @@ class _SeriesPage extends State<SeriesPage> {
     return MetronService().getSeriesDetail(widget.seriesPreview);
   }
 
-  Future<List<IssuePreview>> loadIssuesPreviews(SeriesDetail series){
-    return MetronService().getSeriesIssueList(series);
+  Future<List<IssuePreview>> loadIssuesPreviews(SeriesDetail series) async {
+    List<IssuePreview> foundIssues = await MetronService().getSeriesIssueList(series);
+
+    for(IssuePreview issue in foundIssues){
+      bool exists = await SqliteService().trackerExists(issue);
+
+      if(!exists) break;
+
+      Map<String, dynamic> result = await SqliteService().getTracker(issue);
+
+      TrackStatus trackStatus = TrackStatus.fromInt(int.parse(result["status"].toString()));
+
+      issue.setTrackStatus(trackStatus);
+    }
+
+    return foundIssues;
   }
 }
 
