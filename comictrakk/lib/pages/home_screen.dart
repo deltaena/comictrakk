@@ -1,5 +1,5 @@
-import 'package:comictrakk/objects/Series/pojos/series_preview.dart';
-import 'package:comictrakk/objects/Series/widgets/series_preview_list_item.dart';
+import 'package:comictrakk/objects/series/series_preview.dart';
+import 'package:comictrakk/widgets/list_items/series_preview_list_item.dart';
 import 'package:comictrakk/services/metron/metron_service.dart' show MetronService;
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,7 @@ class _HomeScreen extends State<HomeScreen> {
         body:
         Column(
           children: <Widget>[
-            const Text('Series view'),
+            const Text('series view'),
             Expanded(
               child: ListView.builder(
                   padding: const EdgeInsets.all(8),

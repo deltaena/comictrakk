@@ -1,8 +1,11 @@
-import 'package:comictrakk/objects/Issue/pojos/issue_preview.dart';
-import 'package:comictrakk/objects/Issue/widgets/issue_preview_list_item.dart';
-import 'package:comictrakk/objects/Series/pojos/series_detail.dart';
-import 'package:comictrakk/objects/Series/pojos/series_preview.dart';
+import 'dart:collection';
+
+import 'package:comictrakk/objects/issue/issue_preview.dart';
+import 'package:comictrakk/widgets/list_items/issue_preview_list_item.dart';
+import 'package:comictrakk/objects/series/series_detail.dart';
+import 'package:comictrakk/objects/series/series_preview.dart';
 import 'package:comictrakk/objects/enum_variables/track_status.dart';
+import 'package:comictrakk/objects/sqlite_rows/tracker_row.dart';
 import 'package:comictrakk/services/metron/metron_service.dart';
 import 'package:comictrakk/services/storage/sqlite_service.dart';
 import 'package:flutter/material.dart';
@@ -77,16 +80,18 @@ class _SeriesPage extends State<SeriesPage> {
   Future<List<IssuePreview>> loadIssuesPreviews(SeriesDetail series) async {
     List<IssuePreview> foundIssues = await MetronService().getSeriesIssueList(series);
 
+    List<TrackerRow> rowsList = await SqliteService().getTrackers(foundIssues);
+
+    Map<int, TrackerRow> rowsMap = {
+      for (var row in rowsList) row.id: row
+    };
+
     for(IssuePreview issue in foundIssues){
-      bool exists = await SqliteService().trackerExists(issue);
+      if(rowsMap.containsKey(issue.id)){
+        TrackStatus issueStatus = TrackStatus.fromInt(rowsMap[issue.id]!.status);
 
-      if(!exists) break;
-
-      Map<String, dynamic> result = await SqliteService().getTracker(issue);
-
-      TrackStatus trackStatus = TrackStatus.fromInt(int.parse(result["status"].toString()));
-
-      issue.setTrackStatus(trackStatus);
+        issue.setTrackStatus(issueStatus);
+      }
     }
 
     return foundIssues;

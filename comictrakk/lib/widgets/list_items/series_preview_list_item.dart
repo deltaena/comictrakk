@@ -1,6 +1,5 @@
-import 'package:comictrakk/objects/Series/pojos/series_preview.dart';
+import 'package:comictrakk/objects/series/series_preview.dart';
 import 'package:comictrakk/pages/series_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SeriesPreviewListItem extends StatelessWidget {

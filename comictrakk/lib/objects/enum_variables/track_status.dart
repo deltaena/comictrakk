@@ -1,3 +1,5 @@
+import 'package:comictrakk/objects/sqlite_rows/tracker_row.dart';
+
 enum TrackStatus {
   notTracking(0),
   wished(1),

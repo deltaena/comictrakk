@@ -1,5 +1,5 @@
-import 'package:comictrakk/objects/Series/pojos/series_detail.dart';
-import 'package:comictrakk/objects/Trackable/trackable.dart';
+import 'package:comictrakk/objects/series/series_detail.dart';
+import 'package:comictrakk/objects/trackable/trackable.dart';
 
 class IssuePreview extends Trackable {
 

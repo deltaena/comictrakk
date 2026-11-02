@@ -1,7 +1,9 @@
 import 'dart:async';
 
-import 'package:comictrakk/objects/Trackable/trackable.dart';
+import 'package:comictrakk/objects/trackable/trackable.dart';
 import 'package:comictrakk/objects/enum_variables/track_status.dart';
+import 'package:comictrakk/objects/sqlite_rows/tracker_row.dart';
+import 'package:comictrakk/services/storage/tracker_subservice.dart';
 import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
@@ -18,92 +20,86 @@ class SqliteService {
   SqliteService._internal();
   //endregion
 
-  Future<Map<String, dynamic>> getTracker(Trackable trackable) async {
-    print("deltalog: querying id ${trackable.id}");
+  final TrackerSubservice _trackerServ = TrackerSubservice();
 
-    List<Map<String, Object?>> result = await _queryTracker(trackable.id);
+  Future<bool> upsertTracker(Trackable trackable, TrackStatus newStatus) async {
+    List<Map<String, Object?>> getTrackerResult = await _trackerServ.getTracker(trackable);
+    bool trackerMissing = getTrackerResult.isEmpty;
 
-    print("deltalog: ${result.length} rows");
+    if(trackerMissing) {
+      int insertedRowId = await _trackerServ.insertTracker(trackable, newStatus);
 
-    print("deltalog: $result");
-
-    if(result.length == 1){
-      return result[0];
+      return insertedRowId > 0;
     }
 
-    throw Exception("more than one row was queried, something failed");
-  }
+    bool statusMatches = trackable.getTrackStatus().name == newStatus.name;
 
-  Future<bool> updateTracker(Trackable trackable, TrackStatus newStatus) async {
-    print("deltalog: updating id ${trackable.id}");
+    if(statusMatches){
+      int deletedRows = await _trackerServ.deleteTracker(trackable);
 
-    bool trackerCreated = await trackerExists(trackable);
-
-    Map<String, dynamic> row = { "id": trackable.id, "status": newStatus.value };
-
-    if(trackerCreated){
-      return await _updateTracker(trackable.id, row);
+      return deletedRows == 1;
     }
 
-    return await _insertTracker(row);
+    int updatedRows = await _trackerServ.updateTracker(trackable, newStatus);
+
+    return updatedRows == 1;
   }
 
-  Future<bool> trackerExists(Trackable trackable) async {
-    List<Map<String, Object?>> trackers = await _queryTracker(trackable.id);
+  Future<List<TrackerRow>> getTrackers(List<Trackable> trackable) async {
+    List<Map<String, Object?>> rows = await _trackerServ.getTrackers(trackable);
 
-    return trackers.isNotEmpty;
+    return rows.map((row) => TrackerRow.fromJson(row)).toList();
+  }
+  Future<List<TrackerRow>> getTracker(Trackable trackable) async {
+    List<Map<String, Object?>> rows = await _trackerServ.getTracker(trackable);
+
+    return rows.map((row) => TrackerRow.fromJson(row)).toList();
   }
 
-  Future<List<Map<String, Object?>>> _queryTracker(int trackableId) async {
-    Database db = await _open();
-
-    List<Map<String, Object?>> result = await db.query(
-        "tracker",
-        where: "id = ?",
-        whereArgs: [trackableId]
-    );
-
-    return result;
-  }
-
-  Future<bool> _insertTracker(Map<String, dynamic> map) async {
-    Database db = await _open();
-
-    int rowId = await db.insert(
-        "tracker",
-        map,
-        conflictAlgorithm: ConflictAlgorithm.fail
-    );
-
-    return rowId > 0;
-  }
-
-  Future<bool> _updateTracker(int trackableId, Map<String, dynamic> map) async {
-    Database db = await _open();
-
-    int rowId = await db.update(
-        "tracker",
-        map,
-        where: "id = ?",
-        whereArgs: [trackableId],
-        conflictAlgorithm: ConflictAlgorithm.fail
-    );
-
-    return rowId > 0;
-  }
-
-  Future<Database> _open() async {
-    WidgetsFlutterBinding.ensureInitialized();
-
-    return openDatabase(
-      join(await getDatabasesPath(), 'comictrakk.db'),
-
-      onCreate: (db, version) {
-        return db.execute(
-          'CREATE TABLE tracker(id INTEGER PRIMARY KEY, status INTEGER)',
-        );
-      },
-      version: 1,
-    );
-  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

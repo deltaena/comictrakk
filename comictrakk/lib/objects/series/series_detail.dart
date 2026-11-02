@@ -1,5 +1,5 @@
-import 'package:comictrakk/objects/Series/pojos/series_preview.dart';
-import 'package:comictrakk/objects/Series/pojos/series_type.dart';
+import 'package:comictrakk/objects/series/series_preview.dart';
+import 'package:comictrakk/objects/series/series_type.dart';
 
 class SeriesDetail extends SeriesPreview {
 

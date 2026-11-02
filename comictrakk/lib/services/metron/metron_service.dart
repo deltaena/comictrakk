@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:comictrakk/helpers/secrets.dart';
-import 'package:comictrakk/objects/Issue/pojos/issue_preview.dart';
-import 'package:comictrakk/objects/Series/pojos/series_detail.dart';
-import 'package:comictrakk/objects/Series/pojos/series_preview.dart';
+import 'package:comictrakk/objects/issue/issue_preview.dart';
+import 'package:comictrakk/objects/series/series_detail.dart';
+import 'package:comictrakk/objects/series/series_preview.dart';
 import 'package:http/http.dart' as http;
 
 class MetronService {
