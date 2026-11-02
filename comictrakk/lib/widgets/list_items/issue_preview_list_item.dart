@@ -1,15 +1,19 @@
+import 'package:comictrakk/objects/issue/issue_detail.dart';
 import 'package:comictrakk/objects/issue/issue_preview.dart';
 import 'package:comictrakk/objects/enum_variables/track_status.dart';
+import 'package:comictrakk/objects/series/series_detail.dart';
 import 'package:comictrakk/objects/sqlite_rows/tracker_row.dart';
+import 'package:comictrakk/services/metron/metron_service.dart';
 import 'package:comictrakk/services/storage/sqlite_service.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:comictrakk/widgets/dialogs/propagation_dialog.dart';
 import 'package:flutter/material.dart';
 
-class IssuePreviewListItem extends StatefulWidget{
+class IssuePreviewListItem extends StatefulWidget {
 
+  final SeriesDetail series;
   final IssuePreview issue;
 
-  const IssuePreviewListItem({super.key, required this.issue});
+  const IssuePreviewListItem({super.key, required this.series, required this.issue});
 
   @override
   State<StatefulWidget> createState() { return _IssuePreviewListItem(); }
@@ -24,7 +28,7 @@ class _IssuePreviewListItem extends State<IssuePreviewListItem> {
     return GestureDetector(
       onTap: () => (),
       child: SizedBox(
-          height: 90,
+          height: 100,
           child: Row(
             children: [
               Expanded(
@@ -56,7 +60,7 @@ class _IssuePreviewListItem extends State<IssuePreviewListItem> {
       children: [
         Text("id: ${widget.issue.id}"),
         Text("#${widget.issue.number}: ${widget.issue.name}"),
-        Text("${widget.issue.seriesDetail.name} Vol. ${widget.issue.seriesDetail.volumeNumber} - ${widget.issue.seriesDetail.yearBegan}")
+        Text("${widget.series.name} Vol. ${widget.series.volumeNumber} - ${widget.series.yearBegan}")
       ],
     );
   }
@@ -92,6 +96,18 @@ class _IssuePreviewListItem extends State<IssuePreviewListItem> {
 
     operating = true;
 
+    if(widget.series.seriesType.isCollected){
+      bool propagationAccepted = await showPropagationDialog(widget.series, selectedTrackStatus) ?? false;
+
+      if(propagationAccepted){
+        IssueDetail issueDetail = await MetronService().getIssueDetail(widget.issue);
+
+        await SqliteService().upsertTrackers(issueDetail.reprints, selectedTrackStatus);
+
+        print("deltalog: propagated");
+      }
+    }
+
     bool success = await SqliteService().upsertTracker(widget.issue, selectedTrackStatus);
 
     if(success){
@@ -106,7 +122,7 @@ class _IssuePreviewListItem extends State<IssuePreviewListItem> {
 
     TrackStatus newStatus = TrackStatus.notTracking;
 
-    if(trackerRows.length == 1){
+    if(trackerRows.length == 1) {
       newStatus = TrackStatus.fromInt(trackerRows[0].status);
     }
 
@@ -115,37 +131,44 @@ class _IssuePreviewListItem extends State<IssuePreviewListItem> {
     });
   }
 
-  Future<void> _propagationDialog() async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false, // user must tap button!
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Warning'),
-          content: const SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text('Changing status of omnibus to ...'),
-                Text('Would you like to apply to all issues this omnibus contains?'),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Deny'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              child: const Text('Approve'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
+  Future<bool?> showPropagationDialog(SeriesDetail series, TrackStatus selectedTrackStatus) async {
+    return await showDialog<bool>(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return PropagationDialog(seriesDetail: series, selectedTrackStatus: selectedTrackStatus);
+        }
     );
   }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

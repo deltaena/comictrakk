@@ -1,5 +1,6 @@
 import 'dart:collection';
 
+import 'package:comictrakk/objects/issue/issue_detail.dart';
 import 'package:comictrakk/objects/issue/issue_preview.dart';
 import 'package:comictrakk/widgets/list_items/issue_preview_list_item.dart';
 import 'package:comictrakk/objects/series/series_detail.dart';
@@ -25,6 +26,7 @@ class SeriesPage extends StatefulWidget {
 class _SeriesPage extends State<SeriesPage> {
 
   late final SeriesDetail seriesDetail;
+
   final List<IssuePreview> issuesPreviews = List.empty(growable: true);
 
   @override
@@ -45,7 +47,7 @@ class _SeriesPage extends State<SeriesPage> {
                 padding: const EdgeInsets.all(8),
                 itemCount: issuesPreviews.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return IssuePreviewListItem(issue: issuesPreviews[index]);
+                  return IssuePreviewListItem(series: seriesDetail, issue: issuesPreviews[index]);
                 },
                 separatorBuilder: (BuildContext context, int index) {
                   return const Padding(padding: EdgeInsetsGeometry.fromLTRB(0, 2, 0, 2),
@@ -65,20 +67,23 @@ class _SeriesPage extends State<SeriesPage> {
 
   Future<void> loadInitialData() async {
     SeriesDetail series = await loadSeriesDetail();
-    List<IssuePreview> issues = await loadIssuesPreviews(series);
+    setState(() => seriesDetail = series);
 
-    setState(() {
-      seriesDetail = series;
-      issuesPreviews.addAll(issues);
-    });
+    List<IssuePreview> issues = await loadIssuesPreviews(series);
+    setState(() => issuesPreviews.addAll(issues));
   }
 
   Future<SeriesDetail> loadSeriesDetail() {
     return MetronService().getSeriesDetail(widget.seriesPreview);
   }
 
+  Future<IssueDetail> loadIssueDetails(SeriesDetail series) async {
+    IssueDetail foundIssue = await MetronService().getSeriesIssueDetailList(series);
+
+    return foundIssue;
+  }
   Future<List<IssuePreview>> loadIssuesPreviews(SeriesDetail series) async {
-    List<IssuePreview> foundIssues = await MetronService().getSeriesIssueList(series);
+    List<IssuePreview> foundIssues = await MetronService().getSeriesIssuePreviewList(series);
 
     List<TrackerRow> rowsList = await SqliteService().getTrackers(foundIssues);
 

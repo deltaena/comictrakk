@@ -19,10 +19,21 @@ class SeriesPreviewListItem extends StatelessWidget {
       },
       child: SizedBox(
         height: 50,
-        child: Column(
+        child: Row(
           children: [
-            Center(child: Text("${series.name} Vol. ${series.volumeNumber}")),
-            Center(child: Text(series.seriesType.name))
+            Expanded(
+              flex: 15,
+              child: Column(
+                children: [
+                  Text("${series.name} Vol. ${series.volumeNumber}", overflow: TextOverflow.ellipsis,),
+                  Text(series.seriesType.name)
+                ],
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Center(child: Text("${series.issueCount}"))
+            )
           ]
         ),
       )

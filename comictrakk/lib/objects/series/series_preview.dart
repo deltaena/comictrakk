@@ -1,15 +1,13 @@
+import 'package:comictrakk/objects/series/base_series.dart';
 import 'package:comictrakk/objects/series/series_type.dart';
 
-class SeriesPreview {
+class SeriesPreview extends BaseSeries {
 
-  late int id;
-  late String name;
-  late int volumeNumber;
-  late int yearBegan;
   late SeriesType seriesType;
+  late int issueCount;
 
-  SeriesPreview({required this.id, required this.name, required this.volumeNumber, required this.yearBegan,
-    required this.seriesType});
+  SeriesPreview({required super.id, required super.name, required super.volumeNumber, required super.yearBegan,
+    required this.issueCount, required this.seriesType});
 
   factory SeriesPreview.fromJson(Map<String, dynamic> json){
     return SeriesPreview(
@@ -17,6 +15,7 @@ class SeriesPreview {
       name: json["series"],
       volumeNumber: json["volume"],
       yearBegan: json["year_began"],
+      issueCount: json["issue_count"],
 
       seriesType: SeriesType.fromJson(json["series_type"])
     );

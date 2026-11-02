@@ -36,7 +36,7 @@ class _HomeScreen extends State<HomeScreen> {
             ),
             FloatingActionButton.large(
               onPressed: () {
-                MetronService().searchSeriesPreviewByName("Absolute Carnage").then((seriesRes) {
+                MetronService().searchSeriesPreviewByName("spider-man noir").then((seriesRes) {
                   setState(() {
                     series.addAll(seriesRes);
                   });

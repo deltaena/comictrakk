@@ -8,11 +8,10 @@ class SeriesDetail extends SeriesPreview {
   final String status;
   final int yearEnd;
   final String description;
-  final int issueCount;
 
   new({required super.id, required super.name, required super.volumeNumber, required super.yearBegan,
     required super.seriesType, required this.sortName, required this.language, required this.status,
-    required this.yearEnd, required this.description, required this.issueCount});
+    required this.yearEnd, required this.description, required super.issueCount});
 
   factory SeriesDetail.fromJson(Map<String, dynamic> json){
     return SeriesDetail(
@@ -22,7 +21,6 @@ class SeriesDetail extends SeriesPreview {
       yearBegan: json["year_began"],
 
       seriesType: SeriesType.fromJson(json["series_type"]),
-
 
       sortName: json["sort_name"],
       language: json["language"],

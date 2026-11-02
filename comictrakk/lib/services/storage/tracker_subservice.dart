@@ -12,14 +12,29 @@ class TrackerSubservice extends SqliteSubservice {
   String get dbCreateQuery => "CREATE TABLE tracker (id INTEGER PRIMARY KEY, status INTEGER)";
 
 
+  Future<List<Object?>> insertTrackers(List<Trackable> trackables, TrackStatus newStatus) async {
+    List<Map<String, dynamic>> trackablesMap = trackables.map((trackable) => _createArgs(trackable, newStatus)).toList();
+
+    return await _insertTrackers(trackablesMap);
+  }
   Future<int> insertTracker(Trackable trackable, TrackStatus newStatus) async {
     return await _insertTracker(_createArgs(trackable, newStatus));
   }
 
+  Future<List<Object?>> updateTrackers(List<Trackable> trackables, TrackStatus newStatus) async {
+    List<Map<String, dynamic>> trackablesMap = trackables.map((trackable) => _createArgs(trackable, newStatus)).toList();
+
+    return await _updateTrackers(trackablesMap);
+  }
   Future<int> updateTracker(Trackable trackable, TrackStatus newStatus) async {
     return await _updateTracker(_createArgs(trackable, newStatus));
   }
 
+  Future<List<Object?>> deleteTrackers(List<Trackable> trackables) async {
+    List<int> trackableIds = trackables.map((trackable) => trackable.id).toList();
+
+    return await _deleteTrackers(trackableIds);
+  }
   Future<int> deleteTracker(Trackable trackable) async {
     return await _deleteTracker(trackable.id);
   }
@@ -39,6 +54,18 @@ class TrackerSubservice extends SqliteSubservice {
 
 
   //region insert, update, delete get logic
+  Future<List<Object?>> _insertTrackers(List<Map<String, dynamic>> trackables) async {
+    Batch batch = await openBatch();
+
+    for(Map<String, dynamic> trackableMap in trackables){
+      batch.insert(
+          dbName,
+          trackableMap,
+      );
+    }
+
+    return await batch.commit();
+  }
   Future<int> _insertTracker(Map<String, dynamic> map) async {
     Database db = await open();
 
@@ -49,11 +76,25 @@ class TrackerSubservice extends SqliteSubservice {
     );
   }
 
+  Future<List<Object?>> _updateTrackers(List<Map<String, dynamic>> trackables) async {
+    Batch batch = await openBatch();
+
+    for(Map<String, dynamic> trackableMap in trackables){
+      batch.update(
+        dbName,
+        trackableMap,
+        where: "id = ?",
+        whereArgs: [trackableMap["id"]]
+      );
+    }
+
+    return await batch.commit();
+  }
   Future<int> _updateTracker(Map<String, dynamic> map) async {
     Database db = await open();
 
     return await db.update(
-        "tracker",
+        dbName,
         map,
         where: "id = ?",
         whereArgs: [map["id"]],
@@ -61,6 +102,19 @@ class TrackerSubservice extends SqliteSubservice {
     );
   }
 
+  Future<List<Object?>> _deleteTrackers(List<int> trackableIds) async {
+    Batch batch = await openBatch();
+
+    String placeholders = List.filled(trackableIds.length, "?").join(",");
+
+    batch.delete(
+      dbName,
+      where: "id IN ($placeholders)",
+      whereArgs: trackableIds,
+    );
+
+    return await batch.commit();
+  }
   Future<int> _deleteTracker(int trackableId) async {
     Database db = await open();
 
@@ -87,6 +141,7 @@ class TrackerSubservice extends SqliteSubservice {
 
     return await db.query(
         dbName,
+        limit: 1,
         where: "id = ?",
         whereArgs: [trackableId]
     );

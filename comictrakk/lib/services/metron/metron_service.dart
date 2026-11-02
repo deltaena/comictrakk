@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:comictrakk/helpers/secrets.dart';
+import 'package:comictrakk/objects/issue/issue_detail.dart';
 import 'package:comictrakk/objects/issue/issue_preview.dart';
 import 'package:comictrakk/objects/series/series_detail.dart';
 import 'package:comictrakk/objects/series/series_preview.dart';
@@ -22,13 +23,35 @@ class MetronService {
   MetronService._internal();
   //endregion
 
-  //region search by name
   Future<List<SeriesPreview>> searchSeriesPreviewByName(String name) async {
     List<dynamic> seriesMaps = await _searchResourceByName("series", name);
 
     return seriesMaps.map((seriesMap) => SeriesPreview.fromJson(seriesMap)).toList();
   }
+  
+  Future<IssueDetail> getSeriesIssueDetailList(SeriesDetail series) async {
+    Map<String, dynamic> issuesMap = await _getResourceDetail("issue", series.id);
 
+    return IssueDetail.fromJson(issuesMap);
+  }
+  Future<List<IssuePreview>> getSeriesIssuePreviewList(SeriesDetail series) async {
+    List<dynamic> issuesMap = await _getResourceIssuesList("series", series.id);
+
+    return issuesMap.map((issueMap) => IssuePreview.fromJson(issueMap)).toList();
+  }
+
+  Future<SeriesDetail> getSeriesDetail(SeriesPreview series) async {
+    Map<String, dynamic> detailMap = await _getResourceDetail("series", series.id);
+
+    return SeriesDetail.fromJson(detailMap);
+  }
+  Future<IssueDetail> getIssueDetail(IssuePreview issue) async {
+    Map<String, dynamic> detailMap = await _getResourceDetail("issue", issue.id);
+
+    return IssueDetail.fromJson(detailMap);
+  }
+
+  //region methods
   Future<List<dynamic>> _searchResourceByName(String resourceName, String name) async {
     Uri uri = Uri.parse('$_baseUrl/$resourceName/?name=${name.replaceAll(" ", "%20")}');
 
@@ -36,15 +59,6 @@ class MetronService {
 
     return body["results"];
   }
-  //endregion
-
-  //region get issues_list
-  Future<List<IssuePreview>> getSeriesIssueList(SeriesDetail series) async {
-    List<dynamic> issuesMap = await _getResourceIssuesList("series", series.id);
-
-    return issuesMap.map((issueMap) => IssuePreview.fromJson(series, issueMap)).toList();
-  }
-
 
   Future<List<dynamic>> _getResourceIssuesList(String resourceName, int resourceId) async {
     Uri uri =  Uri.parse('$_baseUrl/$resourceName/$resourceId/issue_list');
@@ -53,23 +67,16 @@ class MetronService {
 
     return body["results"];
   }
-  //endregion
-
-  //region search details
-  Future<SeriesDetail> getSeriesDetail(SeriesPreview series) async {
-    Map<String, dynamic> detailMap = await _getResourceDetail("series", series.id);
-
-    return SeriesDetail.fromJson(detailMap);
-  }
 
   Future<Map<String, dynamic>> _getResourceDetail(String resourceName, int resourceId) async {
     Uri uri = Uri.parse('$_baseUrl/$resourceName/$resourceId');
 
     return await _executeQuery(uri);
   }
-  //endregion
 
   Future<Map<String, dynamic>> _executeQuery(Uri uri) async {
+    print("deltalog: executing $uri");
+
     http.Response response = await http.get(uri,
       headers: {'Authorization': _tokenAuth},
     );
@@ -80,4 +87,5 @@ class MetronService {
       throw Exception("error code ${response.statusCode} on petition: $uri");
     }
   }
+  //endregion
 }
