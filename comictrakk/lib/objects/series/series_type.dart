@@ -11,4 +11,6 @@ class SeriesType {
       name: json["name"]
     );
   }
+
+  bool get isCollected => (id == 15 || id == 10 || id == 8);
 }
