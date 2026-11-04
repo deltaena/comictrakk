@@ -1,25 +1,23 @@
-import 'package:comictrakk/core/enums/track_status.dart';
-import 'package:comictrakk/core/models/series/series_detail.dart';
+import 'package:comictrakk/core/models/series/series_preview.dart';
 import 'package:flutter/material.dart';
 
 class PropagationDialog extends StatelessWidget {
 
-  final SeriesDetail seriesDetail;
-  final TrackStatus selectedTrackStatus;
+  final SeriesPreview series;
 
-  const PropagationDialog({super.key, required this.seriesDetail, required this.selectedTrackStatus});
+  const PropagationDialog({super.key, required this.series});
 
   @override
   Widget build(BuildContext context) {
 
     return AlertDialog(
-      title: Text(selectedTrackStatus.name),
+      title: Text(series.name),
       content: SingleChildScrollView(
         child: ListBody(
           children: <Widget>[
-            Text('Changing status of ${seriesDetail.name} ${seriesDetail.seriesType.name} to ${selectedTrackStatus.name}'),
+            Text('Changing status of ${series.name} ${series.seriesType.name}'),
             Text(
-              'Would you also like to change all issues ${seriesDetail.name}} contains to ${selectedTrackStatus.name}?',
+              'Would you also like to change collected issues',
             ),
           ],
         ),

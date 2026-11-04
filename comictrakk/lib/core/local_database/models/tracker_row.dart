@@ -7,7 +7,7 @@ class TrackerRow {
   factory TrackerRow.fromJson(Map<String, Object?> row) {
     return TrackerRow(
         id: int.parse(row["id"].toString()),
-        status: int.parse(row["status"].toString())
+        status: int.parse(row["status"].toString()),
     );
   }
 }

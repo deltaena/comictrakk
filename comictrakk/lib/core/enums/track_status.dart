@@ -1,4 +1,4 @@
-enum TrackStatus {
+enum ComicStatus {
   notTracking(0),
   wished(1),
   haveIt(2),
@@ -6,9 +6,9 @@ enum TrackStatus {
 
   final int value;
 
-  const TrackStatus(this.value);
+  const ComicStatus(this.value);
 
-  factory TrackStatus.fromInt(int num){
+  factory ComicStatus.fromInt(int num){
     switch (num) {
       case 0:
         return notTracking;

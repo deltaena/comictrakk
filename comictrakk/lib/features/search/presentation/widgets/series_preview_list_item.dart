@@ -5,42 +5,50 @@ import 'package:flutter/material.dart';
 class SeriesPreviewListItem extends StatelessWidget {
   final SeriesPreview seriesPreview;
 
-  void get onSeriesTapped => (BuildContext context) {
+  const SeriesPreviewListItem({super.key, required this.seriesPreview});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => onSeriesTapped(context),
+      child: SizedBox(
+        height: 70,
+        child: Row(
+          children: [
+            getCenterRow(),
+            getLeadingRow()
+          ],
+        ),
+      ),
+    );
+  }
+
+  void onSeriesTapped(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute<void>(
         builder: (context) => SeriesDetailPage(seriesPreview: seriesPreview),
       ),
     );
-  };
+  }
 
-  const SeriesPreviewListItem({super.key, required this.seriesPreview});
+  Expanded getLeadingRow(){
+    return Expanded(
+      flex: 1,
+      child: Center(child: Text("${seriesPreview.issueCount}")),
+    );
+  }
 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => onSeriesTapped,
-      child: SizedBox(
-        height: 70,
-        child: Row(
-          children: [
-            Expanded(
-              flex: 15,
-              child: Column(
-                children: [
-                  Text(seriesPreview.name,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text("Vol. ${seriesPreview.volumeNumber} - ${seriesPreview.yearBegan} - ${seriesPreview.seriesType.name}"),
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Center(child: Text("${seriesPreview.issueCount}")),
-            ),
-          ],
-        ),
+  Expanded getCenterRow(){
+    return Expanded(
+      flex: 15,
+      child: Column(
+        children: [
+          Text(seriesPreview.name,
+            overflow: TextOverflow.ellipsis,
+          ),
+          Text("Vol. ${seriesPreview.volumeNumber} - ${seriesPreview.yearBegan} - ${seriesPreview.seriesType.name}"),
+        ],
       ),
     );
   }

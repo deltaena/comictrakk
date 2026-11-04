@@ -7,10 +7,7 @@ class SearchCubit extends Cubit<SearchState> {
   SearchCubit() : super(SearchInitial());
 
   Future<void> search(String query) async {
-    if(query.trim().isEmpty){
-      emit(SearchInitial());
-      return;
-    }
+    if(query.trim().isEmpty) return;
 
     emit(SearchLoading());
 

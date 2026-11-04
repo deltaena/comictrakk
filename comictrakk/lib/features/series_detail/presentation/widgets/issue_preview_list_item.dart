@@ -1,27 +1,15 @@
-import 'package:comictrakk/core/models/issue/issue_detail.dart';
 import 'package:comictrakk/core/models/issue/issue_preview.dart';
 import 'package:comictrakk/core/enums/track_status.dart';
 import 'package:comictrakk/core/models/series/series_detail.dart';
-import 'package:comictrakk/core/local_database/models/tracker_row.dart';
-import 'package:comictrakk/core/network/comic_api_client.dart';
-import 'package:comictrakk/core/local_database/sqlite_service.dart';
-import 'package:comictrakk/features/series_detail/presentation/widgets/propagation_dialog.dart';
 import 'package:flutter/material.dart';
 
-class IssuePreviewListItem extends StatefulWidget {
+class IssuePreviewListItem extends StatelessWidget {
 
   final SeriesDetail series;
   final IssuePreview issue;
+  final Function(ComicStatus selectedStatus) onStatusSelected;
 
-  const IssuePreviewListItem({super.key, required this.series, required this.issue});
-
-  @override
-  State<StatefulWidget> createState() { return _IssuePreviewListItem(); }
-}
-
-class _IssuePreviewListItem extends State<IssuePreviewListItem> {
-
-  bool operating = false;
+  const IssuePreviewListItem({super.key, required this.series, required this.issue, required this.onStatusSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +38,7 @@ class _IssuePreviewListItem extends State<IssuePreviewListItem> {
   }
 
   Image getImage(){
-    return Image.network(widget.issue.imageUrl, height: 80, width: 60, fit: BoxFit.contain);
+    return Image.network(issue.imageUrl, height: 80, width: 60, fit: BoxFit.contain);
   }
 
   Column getIssueInfo(){
@@ -58,9 +46,8 @@ class _IssuePreviewListItem extends State<IssuePreviewListItem> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text("id: ${widget.issue.id}"),
-        Text("#${widget.issue.number}: ${widget.issue.name}"),
-        Text("${widget.series.name} Vol. ${widget.series.volumeNumber} - ${widget.series.yearBegan}")
+        Text("id: ${issue.id}"),
+        Text("#${issue.number}: ${issue.name}"),
       ],
     );
   }
@@ -71,73 +58,23 @@ class _IssuePreviewListItem extends State<IssuePreviewListItem> {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          getIcon(Icons.shopping_bag, TrackStatus.wished),
-          getIcon(Icons.bookmark_add, TrackStatus.haveIt),
-          getIcon(Icons.check_box, TrackStatus.read),
+          getIcon(Icons.shopping_bag, ComicStatus.wished),
+          getIcon(Icons.bookmark_add, ComicStatus.haveIt),
+          getIcon(Icons.check_box, ComicStatus.read),
         ],
       )
     );
   }
 
-  GestureDetector getIcon(IconData icon, TrackStatus iconTrackStatus){
-    bool selectionAlreadyPicked = widget.issue.getTrackStatus().value == iconTrackStatus.value;
+  GestureDetector getIcon(IconData icon, ComicStatus iconTrackStatus){
+    bool selectionAlreadyPicked = issue.getComicStatus().value == iconTrackStatus.value;
 
     return  GestureDetector(
-      onTap: () => (upsertTrackStatus(iconTrackStatus)),
+      onTap: () => (onStatusSelected(iconTrackStatus)),
       child: Icon(
           icon,
           color: (selectionAlreadyPicked) ? Colors.green : Colors.black12,
       ),
-    );
-  }
-
-  Future<void> upsertTrackStatus(TrackStatus selectedTrackStatus) async {
-    if(operating) return;
-
-    operating = true;
-
-    if(widget.series.seriesType.isCollected){
-      bool propagationAccepted = await showPropagationDialog(widget.series, selectedTrackStatus) ?? false;
-
-      if(propagationAccepted){
-        IssueDetail issueDetail = await ComicApiClient().getIssueDetail(widget.issue);
-
-        await SqliteService().upsertTrackers(issueDetail.reprints, selectedTrackStatus);
-
-        print("deltalog: propagated");
-      }
-    }
-
-    bool success = await SqliteService().upsertTracker(widget.issue, selectedTrackStatus);
-
-    if(success){
-      updateState();
-    }
-
-    operating = false;
-  }
-
-  Future<void> updateState() async {
-    List<TrackerRow> trackerRows = await SqliteService().getTracker(widget.issue);
-
-    TrackStatus newStatus = TrackStatus.notTracking;
-
-    if(trackerRows.length == 1) {
-      newStatus = TrackStatus.fromInt(trackerRows[0].status);
-    }
-
-    setState(() {
-      widget.issue.setTrackStatus(newStatus);
-    });
-  }
-
-  Future<bool?> showPropagationDialog(SeriesDetail series, TrackStatus selectedTrackStatus) async {
-    return await showDialog<bool>(
-        context: context,
-        barrierDismissible: false,
-        builder: (BuildContext context) {
-          return PropagationDialog(seriesDetail: series, selectedTrackStatus: selectedTrackStatus);
-        }
     );
   }
 

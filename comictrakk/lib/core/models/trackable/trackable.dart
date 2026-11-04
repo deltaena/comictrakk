@@ -1,33 +1,18 @@
 import 'package:comictrakk/core/enums/track_status.dart';
+import 'package:comictrakk/core/models/series/series_snippet.dart';
 
 abstract class Trackable {
 
   late int id;
-  late TrackStatus _trackStatus = TrackStatus.notTracking;
+  late SeriesSnippet series;
+  late ComicStatus _comicStatus;
 
-  Trackable(this.id);
+  Trackable({required this.id, this._comicStatus = ComicStatus.notTracking});
 
-  void setTrackStatus(TrackStatus newStatus){ _trackStatus = newStatus; }
+  void setComicStatus(ComicStatus newStatus){
+    if(_comicStatus.value == newStatus.value) return;
 
-  TrackStatus getTrackStatus() { return _trackStatus; }
-
-  Map<String, dynamic> toMap() {
-    return {'id': id, 'status': getTrackStatus()};
+    _comicStatus = newStatus;
   }
-
-  void fromMap(Map<String, dynamic> map){
-    if(!map.containsKey("id") || !map.containsKey("status")) {
-      print("deltalog: error, map doesn't include required fields");
-      return;
-    }
-
-    int mapId = int.parse(map["id"].toString());
-
-    if(!(mapId != id)){
-      print("deltalog: error, map id doesn't match");
-      return;
-    }
-
-    setTrackStatus(TrackStatus.fromInt(map["status"]));
-  }
+  ComicStatus getComicStatus() { return _comicStatus; }
 }

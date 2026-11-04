@@ -75,8 +75,6 @@ class ComicApiClient {
   }
 
   Future<Map<String, dynamic>> _executeQuery(Uri uri) async {
-    print("deltalog: executing $uri");
-
     http.Response response = await http.get(uri,
       headers: {'Authorization': _tokenAuth},
     );

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:collection';
 
+import 'package:comictrakk/core/models/series/series_snippet.dart';
 import 'package:comictrakk/core/models/trackable/trackable.dart';
 import 'package:comictrakk/core/enums/track_status.dart';
 import 'package:comictrakk/core/local_database/models/tracker_row.dart';
@@ -23,7 +24,7 @@ class SqliteService {
 
   final TrackerSubservice _trackerServ = TrackerSubservice();
 
-  Future<List<Object?>> upsertTrackers(List<Trackable> trackables, TrackStatus newStatus) async {
+  Future<List<Object?>> upsertTrackers(List<Trackable> trackables, ComicStatus newStatus) async {
     List<Map<String, Object?>> trackerRowsList =  await _trackerServ.getTrackers(trackables);
     List<int> rowIds = trackerRowsList.map((trackerRow) => int.parse(trackerRow["id"].toString())).toList();
 
@@ -33,7 +34,7 @@ class SqliteService {
 
     for(Trackable trackable in trackables){
       if(rowIds.contains(trackable.id)) {
-        if(trackable.getTrackStatus().value == newStatus.value){
+        if(trackable.getComicStatus().value == newStatus.value){
           print("deltalog: delete -> ${trackable.id}");
           trackablesDelete.add(trackable);
         } else {
@@ -48,8 +49,7 @@ class SqliteService {
 
     List<Object?> insertResult = await _trackerServ.insertTrackers(trackablesInsert, newStatus);
     List<Object?> updateResult = await _trackerServ.updateTrackers(trackablesUpdate, newStatus);
-    List<Object?> deleteResult = await _trackerServ.deleteTrackers(trackablesUpdate);
-
+    List<Object?> deleteResult = await _trackerServ.deleteTrackers(trackablesDelete);
 
     List<Object?> results = List.from(insertResult);
 
@@ -58,7 +58,8 @@ class SqliteService {
 
     return results;
   }
-  Future<bool> upsertTracker(Trackable trackable, TrackStatus newStatus) async {
+
+  Future<bool> upsertTracker(Trackable trackable, ComicStatus newStatus) async {
     List<Map<String, Object?>> getTrackerResult = await _trackerServ.getTracker(trackable);
     bool trackerMissing = getTrackerResult.isEmpty;
 
@@ -68,7 +69,7 @@ class SqliteService {
       return insertedRowId > 0;
     }
 
-    bool statusMatches = trackable.getTrackStatus().value == newStatus.value;
+    bool statusMatches = trackable.getComicStatus().value == newStatus.value;
 
     if(statusMatches){
       int deletedRows = await _trackerServ.deleteTracker(trackable);

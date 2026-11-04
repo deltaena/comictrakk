@@ -1,105 +1,171 @@
-import 'dart:collection';
-
-import 'package:comictrakk/core/models/issue/issue_detail.dart';
-import 'package:comictrakk/core/models/issue/issue_preview.dart';
+import 'package:comictrakk/core/constants/app_assets.dart';
+import 'package:comictrakk/core/models/trackable/trackable.dart';
+import 'package:comictrakk/features/comic_tracking/presentation/tracking_cubit.dart';
+import 'package:comictrakk/features/comic_tracking/presentation/tracking_state.dart';
+import 'package:comictrakk/features/series_detail/presentation/cubit/series_detail_cubit.dart';
+import 'package:comictrakk/features/series_detail/presentation/cubit/series_detail_state.dart';
 import 'package:comictrakk/features/series_detail/presentation/widgets/issue_preview_list_item.dart';
 import 'package:comictrakk/core/models/series/series_detail.dart';
 import 'package:comictrakk/core/models/series/series_preview.dart';
 import 'package:comictrakk/core/enums/track_status.dart';
-import 'package:comictrakk/core/local_database/models/tracker_row.dart';
-import 'package:comictrakk/core/network/comic_api_client.dart';
-import 'package:comictrakk/core/local_database/sqlite_service.dart';
+import 'package:comictrakk/features/series_detail/presentation/widgets/propagation_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
-class SeriesDetailPage extends StatefulWidget {
+class SeriesDetailPage extends StatelessWidget {
 
-  final SeriesPreview seriesPreview;
+  final SeriesPreview _seriesPreview;
 
-  const SeriesDetailPage({super.key, required this.seriesPreview});
+  const SeriesDetailPage({super.key, required this._seriesPreview});
 
   @override
-  State<SeriesDetailPage> createState() {
-    return _SeriesDetailPage();
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<SeriesDetailCubit>(
+          create: (context) => SeriesDetailCubit(seriesPreview: _seriesPreview)
+        ),
+        BlocProvider<TrackingCubit>(
+            create: (context) => TrackingCubit()
+        )
+      ],
+      child: SeriesDetailView(seriesPreview: _seriesPreview,)
+    );
   }
 }
 
-class _SeriesDetailPage extends State<SeriesDetailPage> {
+class SeriesDetailView extends StatelessWidget {
 
-  late final SeriesDetail seriesDetail;
+  final SeriesPreview _seriesPreview;
 
-  final List<IssuePreview> issuesPreviews = List.empty(growable: true);
-
-  @override
-  void initState() {
-    super.initState();
-
-    loadInitialData();
-  }
+  const SeriesDetailView({super.key, required this._seriesPreview});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.seriesPreview.name)),
-      body: Column(
-        children: [
-          Expanded(
-              child: ListView.separated(
-                padding: const EdgeInsets.all(8),
-                itemCount: issuesPreviews.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return IssuePreviewListItem(series: seriesDetail, issue: issuesPreviews[index]);
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return const Padding(padding: EdgeInsetsGeometry.fromLTRB(0, 2, 0, 2),
-                    child: SizedBox(
-                      height: 1.0,
-                      width: double.infinity,
-                      child: ColoredBox(color: Color(0xFF000000)),
-                    )
-                  );
-                },
-              )
-          )
-        ],
-      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            getSeriesHeader(),
+            BlocListener<SeriesDetailCubit, SeriesDetailState>(
+              listener: (context, state) {
+                if (state is SeriesDetailLoaded) {
+                  context.read<TrackingCubit>().loadInitialStatuses(state.issues);
+                }
+
+              },
+              child: BlocBuilder<SeriesDetailCubit, SeriesDetailState>(
+                builder: (context, state) {
+                  if(state is SeriesDetailLoading) {
+                    context.read<SeriesDetailCubit>().loadInitialData();
+                    return getLoadingIndicator();
+                  }
+                  if(state is SeriesDetailLoaded) return getIssuesList(state.series, state);
+                  if(state is SeriesDetailError) return Text("error: ${state.message}");
+
+                  return (Text("The bad guys made something very bad"));
+                })
+            )
+          ],
+        ),
+      )
     );
   }
 
-  Future<void> loadInitialData() async {
-    SeriesDetail series = await loadSeriesDetail();
-    setState(() => seriesDetail = series);
-
-    List<IssuePreview> issues = await loadIssuesPreviews(series);
-    setState(() => issuesPreviews.addAll(issues));
+  SizedBox getSeriesHeader(){
+    return SizedBox(
+      height: 150,
+      child: Container(
+        color: Colors.black38,
+        child: Column(
+          children: [
+            Text(_seriesPreview.name),
+            Text("Vol. ${_seriesPreview.volumeNumber}"),
+            Text("${_seriesPreview.yearBegan} - ${(_seriesPreview.yearEnd == -1) ? "present": _seriesPreview.yearEnd.toString()}")
+          ]
+      ))
+    );
   }
 
-  Future<SeriesDetail> loadSeriesDetail() {
-    return ComicApiClient().getSeriesDetail(widget.seriesPreview);
+  Expanded getIssuesList(SeriesDetail series, SeriesDetailLoaded loadedState){
+    return Expanded(
+        child: ListView.separated(
+          padding: const EdgeInsets.all(8),
+          itemCount: loadedState.issues.length,
+          itemBuilder: (BuildContext context, int index) {
+            final issue = loadedState.issues[index];
+
+            return BlocSelector<TrackingCubit, TrackingState, ComicStatus> (
+                selector: (state) {
+                  if(state.trackables.isEmpty){
+                    return ComicStatus.fromInt(0);
+                  }
+
+                  Map<int, ComicStatus> statusesMap = { for (Trackable t in state.trackables) t.id: t.getComicStatus() };
+
+                  if(!statusesMap.containsKey(issue.id)){
+                    return issue.getComicStatus();
+                  }
+
+                  return statusesMap[issue.id]!;
+                },
+                builder: (context, comicStatus) {
+                  issue.setComicStatus(comicStatus);
+                  return IssuePreviewListItem(
+                    series: series,
+                    issue: issue,
+                    onStatusSelected: (ComicStatus selectedStatus) async {
+                      bool propagate = false;
+
+                      TrackingCubit trackingCubit = context.read<TrackingCubit>();
+
+                      if(series.seriesType.isCollected) {
+                        propagate = await showPropagationDialog(context);
+                      }
+
+                      trackingCubit.updateTrackingStatus(issue, selectedStatus, propagate);
+                    },
+                  );
+                }
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return const Padding(padding: EdgeInsetsGeometry.fromLTRB(0, 2, 0, 2),
+                child: SizedBox(
+                  height: 1.0,
+                  width: double.infinity,
+                  child: ColoredBox(color: Color(0xFF000000)),
+                )
+            );
+          },
+        )
+    );
   }
 
-  Future<IssueDetail> loadIssueDetails(SeriesDetail series) async {
-    IssueDetail foundIssue = await ComicApiClient().getSeriesIssueDetailList(series);
-
-    return foundIssue;
+  Expanded getIdleLogo(){
+    return Expanded(
+        child: SvgPicture.asset(
+          AppAssets.batmanLogo,
+          width: 110,
+          height: 110,
+          fit: BoxFit.contain,
+        )
+    );
   }
-  Future<List<IssuePreview>> loadIssuesPreviews(SeriesDetail series) async {
-    List<IssuePreview> foundIssues = await ComicApiClient().getSeriesIssuePreviewList(series);
 
-    List<TrackerRow> rowsList = await SqliteService().getTrackers(foundIssues);
+  Center getLoadingIndicator(){
+    return Center(child: CircularProgressIndicator());
+  }
 
-    Map<int, TrackerRow> rowsMap = {
-      for (var row in rowsList) row.id: row
-    };
-
-    for(IssuePreview issue in foundIssues){
-      if(rowsMap.containsKey(issue.id)){
-        TrackStatus issueStatus = TrackStatus.fromInt(rowsMap[issue.id]!.status);
-
-        issue.setTrackStatus(issueStatus);
-      }
-    }
-
-    return foundIssues;
+  Future<bool> showPropagationDialog(BuildContext context) async {
+    return await showDialog<bool>(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return PropagationDialog(series: _seriesPreview);
+        }
+    ) ?? false;
   }
 }
 

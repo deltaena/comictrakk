@@ -6,6 +6,7 @@ abstract class SqliteSubservice {
 
   String get dbName;
   String get dbCreateQuery;
+  int get version;
 
   Future<Batch> openBatch() async {
     Database db = await open();
@@ -18,14 +19,13 @@ abstract class SqliteSubservice {
 
     return openDatabase(
       join(await getDatabasesPath(), 'comictrakk.db'),
+      version: version,
 
       onCreate: (db, version) {
         return db.execute(
           dbCreateQuery,
         );
       },
-      version: 1,
     );
   }
-
 }
