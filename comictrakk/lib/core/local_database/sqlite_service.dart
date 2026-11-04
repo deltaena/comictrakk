@@ -26,30 +26,39 @@ class SqliteService {
 
   Future<List<Object?>> upsertTrackers(List<Trackable> trackables, ComicStatus newStatus) async {
     List<Map<String, Object?>> trackerRowsList =  await _trackerServ.getTrackers(trackables);
-    List<int> rowIds = trackerRowsList.map((trackerRow) => int.parse(trackerRow["id"].toString())).toList();
+    Map<int, TrackerRow> rowMap = { for (Map<String, Object?> row in trackerRowsList) int.parse(row["id"]!.toString()) : TrackerRow.fromJson(row) };
 
-    List<Trackable> trackablesInsert = List.empty(growable: true);
-    List<Trackable> trackablesUpdate = List.empty(growable: true);
-    List<Trackable> trackablesDelete = List.empty(growable: true);
+    List<Trackable> toInsert = List.empty(growable: true);
+    List<Trackable> toUpdate = List.empty(growable: true);
+    List<Trackable> toDelete = List.empty(growable: true);
 
-    for(Trackable trackable in trackables){
-      if(rowIds.contains(trackable.id)) {
-        if(trackable.getComicStatus().value == newStatus.value){
-          print("deltalog: delete -> ${trackable.id}");
-          trackablesDelete.add(trackable);
-        } else {
-          print("deltalog: update -> ${trackable.id}");
-          trackablesUpdate.add(trackable);
-        }
-      } else {
-        print("deltalog: insert -> ${trackable.id}");
-        trackablesInsert.add(trackable);
+    for(Trackable trackable in trackables) {
+      bool isInDb = rowMap.containsKey(trackable.id);
+
+      if(isInDb) trackable.setComicStatus(ComicStatus.fromInt(rowMap[trackable.id]!.status));
+
+      bool sameStatus = trackable.getComicStatus().value == newStatus.value;
+
+      //if status doesn't change skip
+      if(sameStatus) continue;
+
+      //if want to delete and is not in db skip
+      if(newStatus.value == 0 && isInDb){
+        toDelete.add(trackable);
+        continue;
       }
+
+      if(isInDb) {
+        toUpdate.add(trackable);
+        continue;
+      }
+
+      toInsert.add(trackable);
     }
 
-    List<Object?> insertResult = await _trackerServ.insertTrackers(trackablesInsert, newStatus);
-    List<Object?> updateResult = await _trackerServ.updateTrackers(trackablesUpdate, newStatus);
-    List<Object?> deleteResult = await _trackerServ.deleteTrackers(trackablesDelete);
+    List<Object?> insertResult = await _trackerServ.insertTrackers(toInsert, newStatus);
+    List<Object?> updateResult = await _trackerServ.updateTrackers(toUpdate, newStatus);
+    List<Object?> deleteResult = await _trackerServ.deleteTrackers(toDelete);
 
     List<Object?> results = List.from(insertResult);
 
