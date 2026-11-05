@@ -1,5 +1,5 @@
-import 'package:comictrakk/pages/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'features/search/presentation/views/search_page.dart';
 
 void main() {
   runApp(MainApp());
@@ -11,7 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: HomeScreen()
+        home: SearchPage()
     );
   }
 }

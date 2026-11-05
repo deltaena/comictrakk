@@ -12,6 +12,8 @@ dependencies:
   http: ^1.6.0
   path: ^1.9.1
   sqflite: ^2.4.5
+  flutter_bloc: ^8.1.3
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -20,3 +22,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/batman-logo.svg
