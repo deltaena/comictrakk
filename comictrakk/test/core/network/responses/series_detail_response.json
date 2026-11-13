@@ -1,0 +1,39 @@
+{
+  "id": 5537,
+  "name": "Ultimate Spider-Man",
+  "sort_name": "Ultimate Spider-Man",
+  "alt_names": [],
+  "language": "en",
+  "volume": 1,
+  "series_type": {
+    "id": 13,
+    "name": "Single Issue"
+  },
+  "status": "Cancelled",
+  "publisher": {
+    "id": 1,
+    "name": "Marvel"
+  },
+  "imprint": null,
+  "year_began": 2000,
+  "year_end": 2009,
+  "desc": "The series is a modernized re-imagining of Marvel's long-running Spider-Man comic book franchise as part of the company's Ultimate Marvel imprint.",
+  "issue_count": 134,
+  "genres": [
+    {
+      "id": 10,
+      "name": "Super-Hero"
+    }
+  ],
+  "associated": [
+    {
+      "id": 5538,
+      "series": "Ultimate Spider-Man Annual (2005)"
+    }
+  ],
+  "cv_id": 7257,
+  "gcd_id": 7825,
+  "resource_url": "https://metron.cloud/series/ultimate-spider-man-2000/",
+  "modified": "2025-01-12T09:37:11.055608-05:00",
+  "attribution": []
+}

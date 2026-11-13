@@ -1,0 +1,1608 @@
+{
+  "count": 186,
+  "next": "https://metron.cloud/api/series/2689/issue_list/?page=2",
+  "previous": null,
+  "results": [
+    {
+      "id": 38148,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "1",
+      "issue": "Witchblade (1995) #1",
+      "cover_date": "1995-11-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/13/witchblade-1.jpg",
+      "cover_hash": "f9d436cf85219a62",
+      "modified": "2026-10-16T16:48:32.069461-04:00"
+    },
+    {
+      "id": 38150,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "2",
+      "issue": "Witchblade (1995) #2",
+      "cover_date": "1996-01-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-2.jpg",
+      "cover_hash": "f4d48383c578697a",
+      "modified": "2026-10-16T16:48:32.066519-04:00"
+    },
+    {
+      "id": 38151,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "3",
+      "issue": "Witchblade (1995) #3",
+      "cover_date": "1996-03-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-3.jpg",
+      "cover_hash": "bfa2f792d025a861",
+      "modified": "2026-10-16T16:48:32.063827-04:00"
+    },
+    {
+      "id": 38152,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "4",
+      "issue": "Witchblade (1995) #4",
+      "cover_date": "1996-04-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-4.jpg",
+      "cover_hash": "ff8580c09e2c6d7a",
+      "modified": "2026-10-16T16:48:32.061263-04:00"
+    },
+    {
+      "id": 38153,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "5",
+      "issue": "Witchblade (1995) #5",
+      "cover_date": "1996-05-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-5.jpg",
+      "cover_hash": "9b4cb592a4cbcc69",
+      "modified": "2026-10-16T16:48:32.058586-04:00"
+    },
+    {
+      "id": 38154,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "6",
+      "issue": "Witchblade (1995) #6",
+      "cover_date": "1996-06-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-6.jpg",
+      "cover_hash": "8e997db467e00517",
+      "modified": "2026-10-16T16:48:32.056219-04:00"
+    },
+    {
+      "id": 38155,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "7",
+      "issue": "Witchblade (1995) #7",
+      "cover_date": "1996-07-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-7.jpg",
+      "cover_hash": "e0418f2cf0d3bf46",
+      "modified": "2026-10-16T16:48:32.053757-04:00"
+    },
+    {
+      "id": 38156,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "8",
+      "issue": "Witchblade (1995) #8",
+      "cover_date": "1996-08-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-8.jpg",
+      "cover_hash": "9cc58797cc294e33",
+      "modified": "2026-10-16T16:48:32.050635-04:00"
+    },
+    {
+      "id": 38157,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "9",
+      "issue": "Witchblade (1995) #9",
+      "cover_date": "1996-09-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-9.jpg",
+      "cover_hash": "d8e00c9f74fc3923",
+      "modified": "2026-10-16T16:48:32.048201-04:00"
+    },
+    {
+      "id": 38158,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "10",
+      "issue": "Witchblade (1995) #10",
+      "cover_date": "1996-11-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-10.jpg",
+      "cover_hash": "e896b9c59e8c3195",
+      "modified": "2026-10-16T16:48:32.045741-04:00"
+    },
+    {
+      "id": 38159,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "11",
+      "issue": "Witchblade (1995) #11",
+      "cover_date": "1996-12-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-11.jpg",
+      "cover_hash": "cefc31948d930e4e",
+      "modified": "2026-10-16T16:48:32.042436-04:00"
+    },
+    {
+      "id": 38160,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "12",
+      "issue": "Witchblade (1995) #12",
+      "cover_date": "1997-03-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-12.jpg",
+      "cover_hash": "eb8186d2934be47a",
+      "modified": "2026-10-16T16:48:32.039676-04:00"
+    },
+    {
+      "id": 38162,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "13",
+      "issue": "Witchblade (1995) #13",
+      "cover_date": "1997-04-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-13.jpg",
+      "cover_hash": "e798b52dc21e3661",
+      "modified": "2026-10-16T16:48:32.037238-04:00"
+    },
+    {
+      "id": 38163,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "14",
+      "issue": "Witchblade (1995) #14",
+      "cover_date": "1997-05-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-14.jpg",
+      "cover_hash": "c591bdccb0136d1e",
+      "modified": "2026-10-16T16:48:32.034778-04:00"
+    },
+    {
+      "id": 38164,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "15",
+      "issue": "Witchblade (1995) #15",
+      "cover_date": "1997-07-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-15.jpg",
+      "cover_hash": "c09ff2e861375847",
+      "modified": "2026-10-16T16:48:32.032351-04:00"
+    },
+    {
+      "id": 38165,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "16",
+      "issue": "Witchblade (1995) #16",
+      "cover_date": "1997-08-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-16.jpg",
+      "cover_hash": "bfd0d45a5f692520",
+      "modified": "2026-10-16T16:48:32.029917-04:00"
+    },
+    {
+      "id": 38166,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "17",
+      "issue": "Witchblade (1995) #17",
+      "cover_date": "1997-09-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-17.jpg",
+      "cover_hash": "cdc7fc3139370348",
+      "modified": "2026-10-16T16:48:32.027340-04:00"
+    },
+    {
+      "id": 38167,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "18",
+      "issue": "Witchblade (1995) #18",
+      "cover_date": "1997-11-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-18.jpg",
+      "cover_hash": "d0c2a5ccce95b9d8",
+      "modified": "2026-10-16T16:48:32.024539-04:00"
+    },
+    {
+      "id": 38168,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "19",
+      "issue": "Witchblade (1995) #19",
+      "cover_date": "1997-12-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-19.jpg",
+      "cover_hash": "d5df9d99b1030b41",
+      "modified": "2026-10-16T16:48:32.022345-04:00"
+    },
+    {
+      "id": 38169,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "20",
+      "issue": "Witchblade (1995) #20",
+      "cover_date": "1998-02-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-20.jpg",
+      "cover_hash": "f506d8cd85f71a42",
+      "modified": "2026-10-16T16:48:32.019737-04:00"
+    },
+    {
+      "id": 38170,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "21",
+      "issue": "Witchblade (1995) #21",
+      "cover_date": "1998-03-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-21.jpg",
+      "cover_hash": "b45e9d13e1a45c6a",
+      "modified": "2026-10-16T16:48:32.017406-04:00"
+    },
+    {
+      "id": 38171,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "22",
+      "issue": "Witchblade (1995) #22",
+      "cover_date": "1998-05-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-22.jpg",
+      "cover_hash": "f499d50f93d50835",
+      "modified": "2026-10-16T16:48:32.015173-04:00"
+    },
+    {
+      "id": 38172,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "23",
+      "issue": "Witchblade (1995) #23",
+      "cover_date": "1998-06-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-23.jpg",
+      "cover_hash": "df7cd79c81642348",
+      "modified": "2026-10-16T16:48:32.012828-04:00"
+    },
+    {
+      "id": 38173,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "24",
+      "issue": "Witchblade (1995) #24",
+      "cover_date": "1998-07-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-24.jpg",
+      "cover_hash": "852b6b1d1b70f272",
+      "modified": "2026-10-16T16:48:32.010715-04:00"
+    },
+    {
+      "id": 38174,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "25",
+      "issue": "Witchblade (1995) #25",
+      "cover_date": "1998-08-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/14/witchblade-25.jpg",
+      "cover_hash": "a184439e1ce9e7bc",
+      "modified": "2026-10-16T16:48:32.008488-04:00"
+    },
+    {
+      "id": 38176,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "26",
+      "issue": "Witchblade (1995) #26",
+      "cover_date": "1998-10-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-26.jpg",
+      "cover_hash": "d489d48d93c6396e",
+      "modified": "2026-10-16T16:48:32.006292-04:00"
+    },
+    {
+      "id": 38177,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "27",
+      "issue": "Witchblade (1995) #27",
+      "cover_date": "1998-11-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-27.jpg",
+      "cover_hash": "f985968ba6c30d6c",
+      "modified": "2026-10-16T16:48:32.003977-04:00"
+    },
+    {
+      "id": 38178,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "28",
+      "issue": "Witchblade (1995) #28",
+      "cover_date": "1999-02-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-28.jpg",
+      "cover_hash": "e5df3434334ee904",
+      "modified": "2026-10-16T16:48:32.001651-04:00"
+    },
+    {
+      "id": 38179,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "29",
+      "issue": "Witchblade (1995) #29",
+      "cover_date": "1999-03-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-29.jpg",
+      "cover_hash": "db5ca5db9605413c",
+      "modified": "2026-10-16T16:48:31.998817-04:00"
+    },
+    {
+      "id": 38180,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "30",
+      "issue": "Witchblade (1995) #30",
+      "cover_date": "1999-04-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-30.jpg",
+      "cover_hash": "fe17ed8199830716",
+      "modified": "2026-10-16T16:48:31.996253-04:00"
+    },
+    {
+      "id": 38181,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "31",
+      "issue": "Witchblade (1995) #31",
+      "cover_date": "1999-05-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-31.jpg",
+      "cover_hash": "eba214853c6d733a",
+      "modified": "2026-10-16T16:48:31.993686-04:00"
+    },
+    {
+      "id": 38182,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "32",
+      "issue": "Witchblade (1995) #32",
+      "cover_date": "1999-07-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-32.jpg",
+      "cover_hash": "c38915d5d655257a",
+      "modified": "2026-10-16T16:48:31.990123-04:00"
+    },
+    {
+      "id": 38183,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "33",
+      "issue": "Witchblade (1995) #33",
+      "cover_date": "1999-08-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-33.jpg",
+      "cover_hash": "d649bdb646855968",
+      "modified": "2026-10-16T16:48:31.987403-04:00"
+    },
+    {
+      "id": 38184,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "34",
+      "issue": "Witchblade (1995) #34",
+      "cover_date": "1999-09-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-34.jpg",
+      "cover_hash": "dcccc5e092e37835",
+      "modified": "2026-10-16T16:48:31.985161-04:00"
+    },
+    {
+      "id": 38185,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "35",
+      "issue": "Witchblade (1995) #35",
+      "cover_date": "1999-10-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-35.jpg",
+      "cover_hash": "c7d3f84acf8c092a",
+      "modified": "2026-10-16T16:48:31.981600-04:00"
+    },
+    {
+      "id": 38186,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "36",
+      "issue": "Witchblade (1995) #36",
+      "cover_date": "1999-12-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-36.jpg",
+      "cover_hash": "f1dfc08cf03e4a68",
+      "modified": "2026-10-16T16:48:31.978623-04:00"
+    },
+    {
+      "id": 38187,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "37",
+      "issue": "Witchblade (1995) #37",
+      "cover_date": "2000-02-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-37.jpg",
+      "cover_hash": "9df6624b06ad664c",
+      "modified": "2026-10-16T16:48:31.975838-04:00"
+    },
+    {
+      "id": 38188,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "38",
+      "issue": "Witchblade (1995) #38",
+      "cover_date": "2000-03-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-38.jpg",
+      "cover_hash": "b595d3dacb8038a6",
+      "modified": "2026-10-16T16:48:31.972906-04:00"
+    },
+    {
+      "id": 38189,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "39",
+      "issue": "Witchblade (1995) #39",
+      "cover_date": "2000-05-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-39.jpg",
+      "cover_hash": "d4629da5fb123568",
+      "modified": "2026-10-16T16:48:31.970406-04:00"
+    },
+    {
+      "id": 38190,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "40",
+      "issue": "Witchblade (1995) #40",
+      "cover_date": "2000-06-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-40.jpg",
+      "cover_hash": "84afa1a41ff8a2f1",
+      "modified": "2026-10-16T16:48:31.968202-04:00"
+    },
+    {
+      "id": 38191,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "41",
+      "issue": "Witchblade (1995) #41",
+      "cover_date": "2000-07-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-41.jpg",
+      "cover_hash": "9af5b3cd94818e58",
+      "modified": "2026-10-16T16:48:31.966406-04:00"
+    },
+    {
+      "id": 38192,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "42",
+      "issue": "Witchblade (1995) #42",
+      "cover_date": "2000-09-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-42.jpg",
+      "cover_hash": "ece1b3950ecc1974",
+      "modified": "2026-10-16T16:48:31.964447-04:00"
+    },
+    {
+      "id": 38193,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "43",
+      "issue": "Witchblade (1995) #43",
+      "cover_date": "2000-11-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-43.jpg",
+      "cover_hash": "c4f187d59d896478",
+      "modified": "2026-10-16T16:48:31.962219-04:00"
+    },
+    {
+      "id": 48906,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "½",
+      "issue": "Witchblade (1995) #½",
+      "cover_date": "2001-01-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2022/06/06/witchblade-0-5-fix.jpg",
+      "cover_hash": "eb9c938417e619e2",
+      "modified": "2024-12-30T10:12:20.949121-05:00"
+    },
+    {
+      "id": 38194,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "44",
+      "issue": "Witchblade (1995) #44",
+      "cover_date": "2001-01-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-44.jpg",
+      "cover_hash": "94cf6f1cb391d181",
+      "modified": "2026-10-16T16:48:31.960283-04:00"
+    },
+    {
+      "id": 38195,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "45",
+      "issue": "Witchblade (1995) #45",
+      "cover_date": "2001-03-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-45.jpg",
+      "cover_hash": "9fdde5839184cc1a",
+      "modified": "2026-10-16T16:48:31.958355-04:00"
+    },
+    {
+      "id": 38196,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "46",
+      "issue": "Witchblade (1995) #46",
+      "cover_date": "2001-05-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-46.jpg",
+      "cover_hash": "d7f6919d495260c6",
+      "modified": "2026-10-16T16:48:31.956426-04:00"
+    },
+    {
+      "id": 38197,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "47",
+      "issue": "Witchblade (1995) #47",
+      "cover_date": "2001-06-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-47.jpg",
+      "cover_hash": "d597178d21a36e58",
+      "modified": "2026-10-16T16:48:31.954560-04:00"
+    },
+    {
+      "id": 38198,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "48",
+      "issue": "Witchblade (1995) #48",
+      "cover_date": "2001-06-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-48.jpg",
+      "cover_hash": "9dd6d91d061b4672",
+      "modified": "2026-10-16T16:48:31.952653-04:00"
+    },
+    {
+      "id": 38199,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "49",
+      "issue": "Witchblade (1995) #49",
+      "cover_date": "2001-08-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-49.jpg",
+      "cover_hash": "f04bc1859d9b37c4",
+      "modified": "2026-10-16T16:48:31.950758-04:00"
+    },
+    {
+      "id": 38200,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "50",
+      "issue": "Witchblade (1995) #50",
+      "cover_date": "2001-08-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-50.jpg",
+      "cover_hash": "ea8a2b8d3a3a232f",
+      "modified": "2026-10-16T16:48:31.948637-04:00"
+    },
+    {
+      "id": 38201,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "51",
+      "issue": "Witchblade (1995) #51",
+      "cover_date": "2001-10-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-51.jpg",
+      "cover_hash": "b6c842392b3ab4ee",
+      "modified": "2026-10-16T16:48:31.946189-04:00"
+    },
+    {
+      "id": 38202,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "52",
+      "issue": "Witchblade (1995) #52",
+      "cover_date": "2002-01-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-52.jpg",
+      "cover_hash": "a8a6cb4a6e382b37",
+      "modified": "2026-10-16T16:48:31.943485-04:00"
+    },
+    {
+      "id": 38203,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "53",
+      "issue": "Witchblade (1995) #53",
+      "cover_date": "2002-02-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-53.jpg",
+      "cover_hash": "ef823c68e22b3a4e",
+      "modified": "2026-10-16T16:48:31.941114-04:00"
+    },
+    {
+      "id": 38204,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "54",
+      "issue": "Witchblade (1995) #54",
+      "cover_date": "2002-04-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-54.jpg",
+      "cover_hash": "faa0a60ff0385e69",
+      "modified": "2026-10-16T16:48:31.938478-04:00"
+    },
+    {
+      "id": 38205,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "55",
+      "issue": "Witchblade (1995) #55",
+      "cover_date": "2002-05-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-55.jpg",
+      "cover_hash": "f1c42a3aebe928a6",
+      "modified": "2026-10-16T16:48:31.936056-04:00"
+    },
+    {
+      "id": 38206,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "56",
+      "issue": "Witchblade (1995) #56",
+      "cover_date": "2002-07-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-56.jpg",
+      "cover_hash": "e9a2066b319ef24b",
+      "modified": "2026-10-16T16:48:31.933664-04:00"
+    },
+    {
+      "id": 38207,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "57",
+      "issue": "Witchblade (1995) #57",
+      "cover_date": "2002-08-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-57.jpg",
+      "cover_hash": "a10e934b3e6d7a62",
+      "modified": "2026-10-16T16:48:31.931309-04:00"
+    },
+    {
+      "id": 38208,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "58",
+      "issue": "Witchblade (1995) #58",
+      "cover_date": "2002-09-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-58.jpg",
+      "cover_hash": "96b28b8e3b6aa83c",
+      "modified": "2026-10-16T16:48:31.929198-04:00"
+    },
+    {
+      "id": 38209,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "59",
+      "issue": "Witchblade (1995) #59",
+      "cover_date": "2002-10-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-59.jpg",
+      "cover_hash": "88afe6baaba82a2a",
+      "modified": "2026-10-16T16:48:31.926899-04:00"
+    },
+    {
+      "id": 38210,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "60",
+      "issue": "Witchblade (1995) #60",
+      "cover_date": "2002-11-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-60.jpg",
+      "cover_hash": "95e4e29bcd132c3c",
+      "modified": "2026-10-16T16:48:31.924664-04:00"
+    },
+    {
+      "id": 38211,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "61",
+      "issue": "Witchblade (1995) #61",
+      "cover_date": "2003-02-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-61.jpg",
+      "cover_hash": "92375d4abcf4224b",
+      "modified": "2026-10-16T16:48:31.922420-04:00"
+    },
+    {
+      "id": 38212,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "62",
+      "issue": "Witchblade (1995) #62",
+      "cover_date": "2003-03-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-62.jpg",
+      "cover_hash": "9c6add3fe2198462",
+      "modified": "2026-10-16T16:48:31.920316-04:00"
+    },
+    {
+      "id": 38213,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "63",
+      "issue": "Witchblade (1995) #63",
+      "cover_date": "2003-05-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-63.jpg",
+      "cover_hash": "d11ee59fe3244863",
+      "modified": "2026-10-16T16:48:31.918489-04:00"
+    },
+    {
+      "id": 38214,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "64",
+      "issue": "Witchblade (1995) #64",
+      "cover_date": "2003-06-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-64.jpg",
+      "cover_hash": "ff8194036d989c67",
+      "modified": "2026-10-16T16:48:31.916347-04:00"
+    },
+    {
+      "id": 38215,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "65",
+      "issue": "Witchblade (1995) #65",
+      "cover_date": "2003-07-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-65.jpg",
+      "cover_hash": "c343fc9e3462436b",
+      "modified": "2026-10-16T16:48:31.913692-04:00"
+    },
+    {
+      "id": 38216,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "66",
+      "issue": "Witchblade (1995) #66",
+      "cover_date": "2003-07-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-66.jpg",
+      "cover_hash": "d403fc8d336a0577",
+      "modified": "2026-10-16T16:48:31.910757-04:00"
+    },
+    {
+      "id": 38217,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "67",
+      "issue": "Witchblade (1995) #67",
+      "cover_date": "2003-08-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-67.jpg",
+      "cover_hash": "d0e7c443ed9b32c4",
+      "modified": "2026-10-16T16:48:31.908036-04:00"
+    },
+    {
+      "id": 38218,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "68",
+      "issue": "Witchblade (1995) #68",
+      "cover_date": "2003-09-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-68.jpg",
+      "cover_hash": "8aaaed8519d9c636",
+      "modified": "2026-10-16T16:48:31.905369-04:00"
+    },
+    {
+      "id": 38219,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "69",
+      "issue": "Witchblade (1995) #69",
+      "cover_date": "2003-10-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-69.jpg",
+      "cover_hash": "eb06a7e8564af906",
+      "modified": "2026-10-16T16:48:31.902843-04:00"
+    },
+    {
+      "id": 38220,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "70",
+      "issue": "Witchblade (1995) #70",
+      "cover_date": "2003-11-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-70.jpg",
+      "cover_hash": "c1133b9875ca7a27",
+      "modified": "2026-10-16T16:48:31.899904-04:00"
+    },
+    {
+      "id": 38221,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "71",
+      "issue": "Witchblade (1995) #71",
+      "cover_date": "2003-12-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-71.jpg",
+      "cover_hash": "9491fa969549497e",
+      "modified": "2026-10-16T16:48:31.896638-04:00"
+    },
+    {
+      "id": 38222,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "72",
+      "issue": "Witchblade (1995) #72",
+      "cover_date": "2004-01-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-72.jpg",
+      "cover_hash": "d38fac93b7604271",
+      "modified": "2026-10-16T16:48:31.893889-04:00"
+    },
+    {
+      "id": 38223,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "73",
+      "issue": "Witchblade (1995) #73",
+      "cover_date": "2004-03-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-73.jpg",
+      "cover_hash": "bc41b4b8875d816f",
+      "modified": "2026-10-16T16:48:31.891333-04:00"
+    },
+    {
+      "id": 38224,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "74",
+      "issue": "Witchblade (1995) #74",
+      "cover_date": "2004-04-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-74.jpg",
+      "cover_hash": "dc07f18b8c6906f6",
+      "modified": "2026-10-16T16:48:31.888278-04:00"
+    },
+    {
+      "id": 38225,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "75",
+      "issue": "Witchblade (1995) #75",
+      "cover_date": "2004-06-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2021/09/15/witchblade-75.jpg",
+      "cover_hash": "f097f88f2c07071b",
+      "modified": "2026-10-16T16:48:31.885900-04:00"
+    },
+    {
+      "id": 48796,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "76",
+      "issue": "Witchblade (1995) #76",
+      "cover_date": "2004-07-01",
+      "store_date": "2004-06-16",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-76.jpg",
+      "cover_hash": "b983e4e70b4b8b91",
+      "modified": "2026-10-16T16:48:23.039428-04:00"
+    },
+    {
+      "id": 48797,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "77",
+      "issue": "Witchblade (1995) #77",
+      "cover_date": "2004-08-01",
+      "store_date": "2004-07-28",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-77.jpg",
+      "cover_hash": "d686ec8f992c06f1",
+      "modified": "2026-10-16T16:48:23.035896-04:00"
+    },
+    {
+      "id": 48798,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "78",
+      "issue": "Witchblade (1995) #78",
+      "cover_date": "2004-09-01",
+      "store_date": "2004-08-18",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-78.jpg",
+      "cover_hash": "e84d14d31c569f6c",
+      "modified": "2026-10-16T16:48:23.032571-04:00"
+    },
+    {
+      "id": 48799,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "79",
+      "issue": "Witchblade (1995) #79",
+      "cover_date": "2004-10-01",
+      "store_date": "2004-09-22",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-79.jpg",
+      "cover_hash": "f824c68fd0c97939",
+      "modified": "2026-10-16T16:48:23.028221-04:00"
+    },
+    {
+      "id": 48800,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "80",
+      "issue": "Witchblade (1995) #80",
+      "cover_date": "2004-11-01",
+      "store_date": "2004-11-03",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-80.jpg",
+      "cover_hash": "d839df0dd2c8226e",
+      "modified": "2026-10-16T16:48:23.025589-04:00"
+    },
+    {
+      "id": 48801,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "81",
+      "issue": "Witchblade (1995) #81",
+      "cover_date": "2005-01-01",
+      "store_date": "2004-12-15",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-81.jpg",
+      "cover_hash": "bca9ca073b9a91e4",
+      "modified": "2026-10-16T16:48:23.020624-04:00"
+    },
+    {
+      "id": 48802,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "82",
+      "issue": "Witchblade (1995) #82",
+      "cover_date": "2005-03-01",
+      "store_date": "2005-01-26",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-82.jpg",
+      "cover_hash": "eaa4a13cd34e11bd",
+      "modified": "2026-10-16T16:48:23.017042-04:00"
+    },
+    {
+      "id": 48803,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "83",
+      "issue": "Witchblade (1995) #83",
+      "cover_date": "2005-03-01",
+      "store_date": "2005-02-23",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-83.jpg",
+      "cover_hash": "fc9b848cb499714e",
+      "modified": "2026-10-16T16:48:23.013492-04:00"
+    },
+    {
+      "id": 48804,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "84",
+      "issue": "Witchblade (1995) #84",
+      "cover_date": "2005-05-01",
+      "store_date": "2005-04-06",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-84.jpg",
+      "cover_hash": "9e25d49a6b85a55c",
+      "modified": "2026-10-16T16:48:23.010940-04:00"
+    },
+    {
+      "id": 48805,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "85",
+      "issue": "Witchblade (1995) #85",
+      "cover_date": "2005-06-01",
+      "store_date": "2005-05-11",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-85.jpg",
+      "cover_hash": "e4b14f8a3a4e8cbc",
+      "modified": "2026-10-16T16:48:23.008343-04:00"
+    },
+    {
+      "id": 48806,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "86",
+      "issue": "Witchblade (1995) #86",
+      "cover_date": "2005-07-01",
+      "store_date": "2005-06-29",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-86.jpg",
+      "cover_hash": "eb1dd6e08c66d909",
+      "modified": "2026-10-16T16:48:23.005629-04:00"
+    },
+    {
+      "id": 48807,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "87",
+      "issue": "Witchblade (1995) #87",
+      "cover_date": "2005-08-01",
+      "store_date": "2005-07-20",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-87.jpg",
+      "cover_hash": "e14f853471fb8cc8",
+      "modified": "2026-10-16T16:48:23.003176-04:00"
+    },
+    {
+      "id": 48808,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "88",
+      "issue": "Witchblade (1995) #88",
+      "cover_date": "2005-09-01",
+      "store_date": "2005-08-17",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-88.jpg",
+      "cover_hash": "f2853c0cc1733f53",
+      "modified": "2026-10-16T16:48:23.000308-04:00"
+    },
+    {
+      "id": 48809,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "89",
+      "issue": "Witchblade (1995) #89",
+      "cover_date": "2005-10-01",
+      "store_date": "2005-09-07",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-89.jpg",
+      "cover_hash": "fe11ec954b92994a",
+      "modified": "2026-10-16T16:48:22.997862-04:00"
+    },
+    {
+      "id": 48810,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "90",
+      "issue": "Witchblade (1995) #90",
+      "cover_date": "2005-11-01",
+      "store_date": "2005-10-05",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-90.jpg",
+      "cover_hash": "b25babcb4de64910",
+      "modified": "2026-10-16T16:48:22.995648-04:00"
+    },
+    {
+      "id": 48811,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "91",
+      "issue": "Witchblade (1995) #91",
+      "cover_date": "2005-12-01",
+      "store_date": "2005-10-26",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-91.jpg",
+      "cover_hash": "f15c93664bc9243b",
+      "modified": "2026-10-16T16:48:22.992932-04:00"
+    },
+    {
+      "id": 48812,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "92",
+      "issue": "Witchblade (1995) #92",
+      "cover_date": "2005-12-01",
+      "store_date": "2005-11-23",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-92.jpg",
+      "cover_hash": "928bfc2d3494337a",
+      "modified": "2026-10-16T16:48:22.989858-04:00"
+    },
+    {
+      "id": 48813,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "93",
+      "issue": "Witchblade (1995) #93",
+      "cover_date": "2006-02-01",
+      "store_date": "2006-01-04",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-93.jpg",
+      "cover_hash": "ec317388115f8f33",
+      "modified": "2026-10-16T16:48:22.986703-04:00"
+    },
+    {
+      "id": 48814,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "94",
+      "issue": "Witchblade (1995) #94",
+      "cover_date": "2006-02-01",
+      "store_date": "2006-01-25",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-94.jpg",
+      "cover_hash": "fc89f265911e6562",
+      "modified": "2026-10-16T16:48:22.983183-04:00"
+    },
+    {
+      "id": 48815,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "95",
+      "issue": "Witchblade (1995) #95",
+      "cover_date": "2006-03-01",
+      "store_date": "2006-02-15",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-95.jpg",
+      "cover_hash": "d487b6838f8781f8",
+      "modified": "2026-10-16T16:48:22.980480-04:00"
+    },
+    {
+      "id": 48816,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "96",
+      "issue": "Witchblade (1995) #96",
+      "cover_date": "2006-04-01",
+      "store_date": "2006-03-15",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-96.jpg",
+      "cover_hash": "fc95dcc2a585037c",
+      "modified": "2026-10-16T16:48:22.977978-04:00"
+    },
+    {
+      "id": 48817,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "97",
+      "issue": "Witchblade (1995) #97",
+      "cover_date": "2006-05-01",
+      "store_date": "2006-04-19",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-97.jpg",
+      "cover_hash": "bcf801431d1eb6e9",
+      "modified": "2026-10-16T16:48:22.973710-04:00"
+    },
+    {
+      "id": 48818,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "98",
+      "issue": "Witchblade (1995) #98",
+      "cover_date": "2006-06-01",
+      "store_date": "2006-05-24",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-98.jpg",
+      "cover_hash": "bdd8504d46ba1da9",
+      "modified": "2026-10-16T16:48:22.969337-04:00"
+    },
+    {
+      "id": 48819,
+      "series": {
+        "id": 2689,
+        "name": "Witchblade",
+        "volume": 1,
+        "year_began": 1995
+      },
+      "number": "99",
+      "issue": "Witchblade (1995) #99",
+      "cover_date": "2006-07-01",
+      "store_date": "2006-06-21",
+      "image": "https://static.metron.cloud/media/issue/2022/06/05/witchblade-99.jpg",
+      "cover_hash": "93e824555cd89a6f",
+      "modified": "2026-10-16T16:48:22.963872-04:00"
+    }
+  ]
+}
+

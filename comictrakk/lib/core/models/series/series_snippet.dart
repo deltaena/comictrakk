@@ -16,4 +16,14 @@ class SeriesSnippet {
     );
   }
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is SeriesSnippet && runtimeType == other.runtimeType &&
+              id == other.id && name == other.name &&
+              volumeNumber == other.volumeNumber &&
+              yearBegan == other.yearBegan;
+
+  @override
+  int get hashCode => Object.hash(id, name, volumeNumber, yearBegan);
 }

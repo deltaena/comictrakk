@@ -19,5 +19,7 @@ class TrackingUpdated extends TrackingState {
 }
 
 class TrackingError extends TrackingState {
-  new({required super.trackables});
+  String message;
+
+  new({required this.message}): super(trackables: List.empty());
 }

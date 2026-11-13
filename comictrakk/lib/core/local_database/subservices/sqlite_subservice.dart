@@ -4,9 +4,11 @@ import 'package:sqflite/sqflite.dart';
 
 abstract class SqliteSubservice {
 
-  String get dbName;
-  String get dbCreateQuery;
+  String get tableName;
+  String get tableCreateQuery;
   int get version;
+
+  static Database? _db;
 
   Future<Batch> openBatch() async {
     Database db = await open();
@@ -17,15 +19,30 @@ abstract class SqliteSubservice {
   Future<Database> open() async {
     WidgetsFlutterBinding.ensureInitialized();
 
-    return openDatabase(
-      join(await getDatabasesPath(), 'comictrakk.db'),
-      version: version,
+    if(_db == null || !(_db!.isOpen) ) {
+      _db = await openDatabase(
+        join(await getDatabasesPath(), 'comictrakk.db'),
+        version: version,
 
-      onCreate: (db, version) {
-        return db.execute(
-          dbCreateQuery,
-        );
-      },
-    );
+        onCreate: (db, version) {
+          return db.execute(
+            tableCreateQuery,
+          );
+        },
+      );
+    }
+
+    return _db!;
+  }
+
+  Future<void> closeDatabase() async {
+    if (_db != null) {
+      await _db!.close();
+      _db = null;
+    }
+
+    // Completely wipe the database file from disk to prevent data leakage
+    final path = join(await getDatabasesPath(), tableName);
+    await databaseFactory.deleteDatabase(path);
   }
 }

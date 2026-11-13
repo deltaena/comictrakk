@@ -1,21 +1,21 @@
-enum ComicStatus {
+enum ComicTrackingStatus {
   notTracking(0),
   wished(1),
-  haveIt(2),
+  have(2),
   read(3);
 
   final int value;
 
-  const ComicStatus(this.value);
+  const ComicTrackingStatus(this.value);
 
-  factory ComicStatus.fromInt(int num){
+  factory ComicTrackingStatus.fromInt(int num){
     switch (num) {
       case 0:
         return notTracking;
       case 1:
         return wished;
       case 2:
-        return haveIt;
+        return have;
       case 3:
         return read;
 

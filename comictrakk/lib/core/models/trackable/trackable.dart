@@ -1,18 +1,18 @@
-import 'package:comictrakk/core/enums/track_status.dart';
+import 'package:comictrakk/core/enums/comic_tracking_status.dart';
 import 'package:comictrakk/core/models/series/series_snippet.dart';
 
 abstract class Trackable {
 
   late int id;
   late SeriesSnippet series;
-  late ComicStatus _comicStatus;
+  late ComicTrackingStatus _comicStatus;
 
-  Trackable({required this.id, this._comicStatus = ComicStatus.notTracking});
+  Trackable({required this.id, this._comicStatus = ComicTrackingStatus.notTracking});
 
-  void setComicStatus(ComicStatus newStatus){
+  void setComicStatus(ComicTrackingStatus newStatus){
     if(_comicStatus.value == newStatus.value) return;
 
     _comicStatus = newStatus;
   }
-  ComicStatus getComicStatus() { return _comicStatus; }
+  ComicTrackingStatus getComicStatus() { return _comicStatus; }
 }

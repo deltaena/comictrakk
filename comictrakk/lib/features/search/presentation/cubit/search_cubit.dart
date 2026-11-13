@@ -4,7 +4,9 @@ import 'package:comictrakk/features/search/presentation/cubit/search_state.dart'
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchCubit extends Cubit<SearchState> {
-  SearchCubit() : super(SearchInitial());
+  final ComicApiClient _comicApi;
+
+  SearchCubit({ComicApiClient? mockApi}) : _comicApi = mockApi ?? ComicApiClient() , super(SearchInitial());
 
   Future<void> search(String query) async {
     if(query.trim().isEmpty) return;
@@ -12,7 +14,7 @@ class SearchCubit extends Cubit<SearchState> {
     emit(SearchLoading());
 
     try {
-      List<SeriesPreview> seriesPreviews = await ComicApiClient().searchSeriesPreviewByName(query);
+      List<SeriesPreview> seriesPreviews = await _comicApi.getSeriesByName(query);
 
       emit(SearchLoaded(seriesPreviews));
     } catch (e) {

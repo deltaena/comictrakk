@@ -1,0 +1,37 @@
+{
+    "id": 7370,
+    "name": "The Darkness",
+    "sort_name": "Darkness",
+    "alt_names": [],
+    "language": "en",
+    "volume": 1,
+    "series_type": {
+        "id": 13,
+        "name": "Single Issue"
+    },
+    "status": "Cancelled",
+    "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+    },
+    "imprint": {
+        "id": 11,
+        "name": "Top Cow"
+    },
+    "year_began": 1996,
+    "year_end": 2001,
+    "desc": "",
+    "issue_count": 42,
+    "genres": [
+        {
+            "id": 10,
+            "name": "Super-Hero"
+        }
+    ],
+    "associated": [],
+    "cv_id": 5868,
+    "gcd_id": 5648,
+    "resource_url": "https://metron.cloud/series/the-darkness-1996/",
+    "modified": "2025-01-19T11:42:00.361840-05:00",
+    "attribution": []
+}
