@@ -1,0 +1,679 @@
+{
+  "count": 42,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 116013,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "1",
+      "issue": "The Darkness (1996) #1",
+      "cover_date": "1996-12-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/b48c03336f27439aabbed3f466117625.jpg",
+      "cover_hash": "e0549211a11febdf",
+      "modified": "2025-01-11T18:18:46.629715-05:00"
+    },
+    {
+      "id": 116014,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "2",
+      "issue": "The Darkness (1996) #2",
+      "cover_date": "1997-01-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/5f25201ac67448d5ab33624c2d00d003.jpg",
+      "cover_hash": "d0d8b2d5a6152f63",
+      "modified": "2025-01-11T18:18:49.213501-05:00"
+    },
+    {
+      "id": 116015,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "3",
+      "issue": "The Darkness (1996) #3",
+      "cover_date": "1997-03-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/32bd9b57c8de4a748857bbaf609e7e94.jpg",
+      "cover_hash": "83a2dc281ff425bd",
+      "modified": "2025-01-11T18:18:52.321157-05:00"
+    },
+    {
+      "id": 116016,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "4",
+      "issue": "The Darkness (1996) #4",
+      "cover_date": "1997-05-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/9335d27b382d41f0b81fa55d0af3fff1.jpg",
+      "cover_hash": "dcd7716363cb4809",
+      "modified": "2025-01-11T18:18:54.896530-05:00"
+    },
+    {
+      "id": 116017,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "5",
+      "issue": "The Darkness (1996) #5",
+      "cover_date": "1997-06-01",
+      "store_date": "1997-04-30",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/0513eb50e2814dceaab04b9c9c41932a.jpg",
+      "cover_hash": "9193b7967443c374",
+      "modified": "2025-01-11T18:18:58.205886-05:00"
+    },
+    {
+      "id": 116018,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "6",
+      "issue": "The Darkness (1996) #6",
+      "cover_date": "1997-07-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/4a8769a8eb4d491ba90d498ccc123b29.jpg",
+      "cover_hash": "93f434c7c9616653",
+      "modified": "2025-01-11T18:19:23.679914-05:00"
+    },
+    {
+      "id": 116019,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "7",
+      "issue": "The Darkness (1996) #7",
+      "cover_date": "1997-08-01",
+      "store_date": "1997-07-30",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/fa9a6f68f2b44665b645aa57f9d214ce.jpg",
+      "cover_hash": "b595fbe4e24c420b",
+      "modified": "2025-01-11T18:19:26.122091-05:00"
+    },
+    {
+      "id": 116021,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "0",
+      "issue": "The Darkness (1996) #0",
+      "cover_date": "1997-10-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/63dae119567344e1afe3acde672af5a1.jpg",
+      "cover_hash": "c49b1b8f1cd5529c",
+      "modified": "2024-04-15T08:57:10.673977-04:00"
+    },
+    {
+      "id": 116020,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "8",
+      "issue": "The Darkness (1996) #8",
+      "cover_date": "1997-10-01",
+      "store_date": "1997-09-24",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/97a947e84191449bb049a139b9346b12.jpg",
+      "cover_hash": "c5d2294c62fcc3b5",
+      "modified": "2025-01-11T18:19:28.526385-05:00"
+    },
+    {
+      "id": 116022,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "9",
+      "issue": "The Darkness (1996) #9",
+      "cover_date": "1997-11-01",
+      "store_date": "1997-11-05",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/bca17fc1e8f4471092ccacf008a86f35.jpg",
+      "cover_hash": "d7d51acaa99998d0",
+      "modified": "2025-01-11T18:19:33.533598-05:00"
+    },
+    {
+      "id": 116023,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "10",
+      "issue": "The Darkness (1996) #10",
+      "cover_date": "1997-12-01",
+      "store_date": "1997-12-10",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/cf91cfb6dca34c1b964f92f1ecf68ff0.jpg",
+      "cover_hash": "cac995b13146c2df",
+      "modified": "2025-01-11T18:19:36.517916-05:00"
+    },
+    {
+      "id": 116024,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "11",
+      "issue": "The Darkness (1996) #11",
+      "cover_date": "1998-01-01",
+      "store_date": "1997-12-31",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/948195f15b274c12ab546d873da299a4.jpg",
+      "cover_hash": "bf40d9a55aa56a23",
+      "modified": "2025-01-11T18:19:39.954413-05:00"
+    },
+    {
+      "id": 116025,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "12",
+      "issue": "The Darkness (1996) #12",
+      "cover_date": "1998-02-01",
+      "store_date": "1998-02-04",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/e091a287d26043179ec8cc6622309b86.jpg",
+      "cover_hash": "c5673ad26c9863e1",
+      "modified": "2025-01-11T18:19:42.260727-05:00"
+    },
+    {
+      "id": 116026,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "13",
+      "issue": "The Darkness (1996) #13",
+      "cover_date": "1998-03-01",
+      "store_date": "1998-02-25",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/c7112e7ab1654e859e2944df02d198c7.jpg",
+      "cover_hash": "f1c1f78d83723960",
+      "modified": "2025-01-11T18:19:44.671623-05:00"
+    },
+    {
+      "id": 116027,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "14",
+      "issue": "The Darkness (1996) #14",
+      "cover_date": "1998-04-01",
+      "store_date": "1998-04-01",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/635222db19a341b4a4ead802e5990d82.jpg",
+      "cover_hash": "a8c3ba93e2d77218",
+      "modified": "2025-01-11T18:19:46.945864-05:00"
+    },
+    {
+      "id": 116028,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "15",
+      "issue": "The Darkness (1996) #15",
+      "cover_date": "1998-06-01",
+      "store_date": "1998-05-13",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/65743703bd4e4bfeb27c7ed6159cc166.jpg",
+      "cover_hash": "b5f4dcd8e0c0e683",
+      "modified": "2025-01-11T18:19:49.385364-05:00"
+    },
+    {
+      "id": 116029,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "16",
+      "issue": "The Darkness (1996) #16",
+      "cover_date": "1998-07-01",
+      "store_date": "1998-07-01",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/ff30405545b84a87b3d6d75c742529b8.jpg",
+      "cover_hash": "bbe794814b326167",
+      "modified": "2025-01-11T18:20:23.686726-05:00"
+    },
+    {
+      "id": 116030,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "17",
+      "issue": "The Darkness (1996) #17",
+      "cover_date": "1998-09-01",
+      "store_date": "1998-08-26",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/b1532ad1e8e546bf946764619c767a4c.jpg",
+      "cover_hash": "a58bc25c3f996526",
+      "modified": "2025-01-11T18:20:25.875836-05:00"
+    },
+    {
+      "id": 116031,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "18",
+      "issue": "The Darkness (1996) #18",
+      "cover_date": "1998-11-01",
+      "store_date": "1998-10-28",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/88cc7b805bb4437a82a9cfd53c7e8ac7.jpg",
+      "cover_hash": "bcdc1746c7c3630c",
+      "modified": "2025-01-11T18:20:28.371375-05:00"
+    },
+    {
+      "id": 116032,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "19",
+      "issue": "The Darkness (1996) #19",
+      "cover_date": "1999-01-01",
+      "store_date": "1998-12-30",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/661a8998957c412fb1057c762166d0ce.jpg",
+      "cover_hash": "bacb809c123f3db4",
+      "modified": "2025-01-11T18:20:31.018729-05:00"
+    },
+    {
+      "id": 116033,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "20",
+      "issue": "The Darkness (1996) #20",
+      "cover_date": "1999-04-01",
+      "store_date": "1999-03-31",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/f492880888f5401aa882e95216e13f4a.jpg",
+      "cover_hash": "f683fc01db9001fe",
+      "modified": "2025-01-11T18:20:33.217490-05:00"
+    },
+    {
+      "id": 116034,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "21",
+      "issue": "The Darkness (1996) #21",
+      "cover_date": "1999-05-01",
+      "store_date": "1999-04-28",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/13779fcd4d02433f95d560e87a26a72d.jpg",
+      "cover_hash": "8c6bb3c2a54994f5",
+      "modified": "2025-01-11T18:20:35.485470-05:00"
+    },
+    {
+      "id": 116035,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "22",
+      "issue": "The Darkness (1996) #22",
+      "cover_date": "1999-06-01",
+      "store_date": "1999-05-19",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/b8bbc0b508764bcba7c8c6dacf86035c.jpg",
+      "cover_hash": "b49707fc230bf823",
+      "modified": "2025-01-11T18:20:38.210622-05:00"
+    },
+    {
+      "id": 116036,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "23",
+      "issue": "The Darkness (1996) #23",
+      "cover_date": "1999-07-01",
+      "store_date": "1999-06-09",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/b4c226b590104d689cc9f960c7598e19.jpg",
+      "cover_hash": "9db565d9d2616161",
+      "modified": "2025-01-11T18:20:42.034405-05:00"
+    },
+    {
+      "id": 116037,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "24",
+      "issue": "The Darkness (1996) #24",
+      "cover_date": "1999-08-01",
+      "store_date": "1999-07-14",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/4efe578e7dd14771b2b6dbe569c89c0c.jpg",
+      "cover_hash": "95dacdc542e17271",
+      "modified": "2025-01-11T18:20:45.064886-05:00"
+    },
+    {
+      "id": 116038,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "25",
+      "issue": "The Darkness (1996) #25",
+      "cover_date": "1999-09-01",
+      "store_date": "1999-08-18",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/8dcbb5e967c048b986c4308a90b2c52a.jpg",
+      "cover_hash": "b4b7b9a482551e5a",
+      "modified": "2025-01-11T18:20:47.573112-05:00"
+    },
+    {
+      "id": 116039,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "26",
+      "issue": "The Darkness (1996) #26",
+      "cover_date": "1999-10-01",
+      "store_date": "1999-09-01",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/7390d438572941d19410a412be91a8bc.jpg",
+      "cover_hash": "f19499cf56407a63",
+      "modified": "2025-01-11T18:21:23.488889-05:00"
+    },
+    {
+      "id": 116040,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "27",
+      "issue": "The Darkness (1996) #27",
+      "cover_date": "1999-11-01",
+      "store_date": "1999-09-29",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/915866d9139a4af68b5d237ae6aee1b4.jpg",
+      "cover_hash": "ba9f81e0d5de0a61",
+      "modified": "2025-01-11T18:21:26.596920-05:00"
+    },
+    {
+      "id": 116041,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "28",
+      "issue": "The Darkness (1996) #28",
+      "cover_date": "2000-01-01",
+      "store_date": "1999-12-08",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/3262377dcc7140b5b3606858b638354b.jpg",
+      "cover_hash": "c3c1b61e1f4f6168",
+      "modified": "2025-01-11T18:21:30.226235-05:00"
+    },
+    {
+      "id": 116042,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "29",
+      "issue": "The Darkness (1996) #29",
+      "cover_date": "2000-02-01",
+      "store_date": "2000-01-26",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/e17f957efa71431ea51f0d96dd6d3cef.jpg",
+      "cover_hash": "ab916cc299e263e6",
+      "modified": "2025-01-11T18:21:32.934572-05:00"
+    },
+    {
+      "id": 116043,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "30",
+      "issue": "The Darkness (1996) #30",
+      "cover_date": "2000-04-01",
+      "store_date": "2000-03-15",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/f6631e52b7aa4edebd856b5312b44e84.jpg",
+      "cover_hash": "d69ec0c950537e0f",
+      "modified": "2025-01-11T18:21:35.343519-05:00"
+    },
+    {
+      "id": 116044,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "31",
+      "issue": "The Darkness (1996) #31",
+      "cover_date": "2000-05-01",
+      "store_date": "2000-04-19",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/6329d48354e94904a1bbff83c3cc7b6c.jpg",
+      "cover_hash": "ccda5db110167bca",
+      "modified": "2025-01-11T18:21:37.962793-05:00"
+    },
+    {
+      "id": 116045,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "32",
+      "issue": "The Darkness (1996) #32",
+      "cover_date": "2000-07-01",
+      "store_date": "2000-06-07",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/e3f4164b672e4e509a590fc90e05ab20.jpg",
+      "cover_hash": "a18286099c79b7fd",
+      "modified": "2025-01-11T18:21:40.791241-05:00"
+    },
+    {
+      "id": 116046,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "33",
+      "issue": "The Darkness (1996) #33",
+      "cover_date": "2000-08-01",
+      "store_date": "2000-07-19",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/f993a39144d145859ce905a42ab494a5.jpg",
+      "cover_hash": "f2871da72d51626a",
+      "modified": "2025-01-11T18:21:43.064135-05:00"
+    },
+    {
+      "id": 116047,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "34",
+      "issue": "The Darkness (1996) #34",
+      "cover_date": "2000-10-01",
+      "store_date": "2000-09-13",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/f753c10d9d5a44b88c225be5a4390853.jpg",
+      "cover_hash": "85d24b3d97c2696c",
+      "modified": "2025-01-11T18:21:45.530582-05:00"
+    },
+    {
+      "id": 116048,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "35",
+      "issue": "The Darkness (1996) #35",
+      "cover_date": "2000-11-01",
+      "store_date": "2000-10-18",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/0389b331b18441e78b5e2a77dddf7341.jpg",
+      "cover_hash": "955ff824432873ea",
+      "modified": "2025-01-11T18:21:48.796222-05:00"
+    },
+    {
+      "id": 116049,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "36",
+      "issue": "The Darkness (1996) #36",
+      "cover_date": "2000-12-01",
+      "store_date": "2000-12-06",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/f5d84b0b68b942c48b58708bb7b68c91.jpg",
+      "cover_hash": "b45e99e743426671",
+      "modified": "2025-01-11T18:22:23.624390-05:00"
+    },
+    {
+      "id": 116050,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "37",
+      "issue": "The Darkness (1996) #37",
+      "cover_date": "2001-02-01",
+      "store_date": "2001-01-31",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/910be65be5e140fd8e48fd681df07f39.jpg",
+      "cover_hash": "dc6fd31343c06ec4",
+      "modified": "2025-01-11T18:22:26.111075-05:00"
+    },
+    {
+      "id": 116051,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "½",
+      "issue": "The Darkness (1996) #½",
+      "cover_date": "2001-03-01",
+      "store_date": null,
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/3d32325307fc4b548b1d7d11a6a22d9d.jpg",
+      "cover_hash": "e2dcb9f04e286167",
+      "modified": "2024-12-30T10:10:43.361130-05:00"
+    },
+    {
+      "id": 116052,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "38",
+      "issue": "The Darkness (1996) #38",
+      "cover_date": "2001-04-01",
+      "store_date": "2001-03-07",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/7c8a6be3af984a188b57490cc5e2149d.jpg",
+      "cover_hash": "a4b5b7c187d15067",
+      "modified": "2025-01-11T18:22:28.406438-05:00"
+    },
+    {
+      "id": 116053,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "39",
+      "issue": "The Darkness (1996) #39",
+      "cover_date": "2001-05-01",
+      "store_date": "2001-04-25",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/dbb9e09ce1b64515908a7241120fa14e.jpg",
+      "cover_hash": "b5df96c1c1426b62",
+      "modified": "2025-01-11T18:22:30.809983-05:00"
+    },
+    {
+      "id": 116054,
+      "series": {
+        "id": 7370,
+        "name": "The Darkness",
+        "volume": 1,
+        "year_began": 1996
+      },
+      "number": "40",
+      "issue": "The Darkness (1996) #40",
+      "cover_date": "2001-08-01",
+      "store_date": "2001-07-18",
+      "image": "https://static.metron.cloud/media/issue/2024/04/15/e1b44631685d443b83bbb0be03977047.jpg",
+      "cover_hash": "d795d5c2c262466e",
+      "modified": "2025-01-11T18:22:33.082227-05:00"
+    }
+  ]
+}

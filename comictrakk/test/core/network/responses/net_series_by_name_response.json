@@ -1,0 +1,1091 @@
+{
+  "count": 57,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 14491,
+      "series": "Archie x The Army of Darkness (2026)",
+      "year_began": 2026,
+      "year_end": 2026,
+      "volume": 1,
+      "issue_count": 5,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 170468,
+      "gcd_id": 233100,
+      "modified": "2026-10-16T12:23:10.919667-04:00"
+    },
+    {
+      "id": 11196,
+      "series": "Ares IX: The Darkness (2018)",
+      "year_began": 2018,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 116031,
+      "gcd_id": 136092,
+      "modified": "2025-04-03T09:51:35.161647-04:00"
+    },
+    {
+      "id": 14114,
+      "series": "The Army of Darkness: 1979 (2021)",
+      "year_began": 2021,
+      "year_end": 2022,
+      "volume": 1,
+      "issue_count": 5,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 138811,
+      "gcd_id": 175824,
+      "modified": "2026-09-03T10:45:33.268527-04:00"
+    },
+    {
+      "id": 16942,
+      "series": "The Army of Darkness: 1979 TPB (2022)",
+      "year_began": 2022,
+      "year_end": 2022,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-09-03T10:45:26.963996-04:00"
+    },
+    {
+      "id": 17016,
+      "series": "Army of Darkness: Ash The Author (2019) Digital",
+      "year_began": 2019,
+      "year_end": 2019,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 12,
+        "name": "Digital Chapter"
+      },
+      "cv_id": 126551,
+      "gcd_id": null,
+      "modified": "2026-09-01T14:48:37.682917-04:00"
+    },
+    {
+      "id": 16853,
+      "series": "Army of Darkness: Ash vs. The Monsters TPB (2007)",
+      "year_began": 2007,
+      "year_end": 2007,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-08-26T11:14:54.922617-04:00"
+    },
+    {
+      "id": 5884,
+      "series": "The Army of Darkness: Forever (2023)",
+      "year_began": 2023,
+      "year_end": 2024,
+      "volume": 1,
+      "issue_count": 13,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 154126,
+      "gcd_id": 204870,
+      "modified": "2026-10-16T17:48:50.054853-04:00"
+    },
+    {
+      "id": 16862,
+      "series": "Army of Darkness: From the Ashes TPB (2008)",
+      "year_began": 2008,
+      "year_end": 2008,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-08-26T15:17:49.805587-04:00"
+    },
+    {
+      "id": 16866,
+      "series": "Army of Darkness: The Long Road Home TPB (2009)",
+      "year_began": 2009,
+      "year_end": 2009,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": 155221,
+      "modified": "2026-08-26T15:51:31.085750-04:00"
+    },
+    {
+      "id": 16892,
+      "series": "The Army of Darkness vs. Reanimator: Necronomicon Rising TPB (2024)",
+      "year_began": 2024,
+      "year_end": 2024,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-10-16T17:48:50.093150-04:00"
+    },
+    {
+      "id": 17037,
+      "series": "The Art of Army of Darkness HC (2015)",
+      "year_began": 2015,
+      "year_end": 2015,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 8,
+        "name": "Hardcover"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-09-03T10:45:00.335717-04:00"
+    },
+    {
+      "id": 14117,
+      "series": "Ash and The Army of Darkness (2013)",
+      "year_began": 2013,
+      "year_end": 2014,
+      "volume": 1,
+      "issue_count": 8,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 68723,
+      "gcd_id": 77319,
+      "modified": "2025-12-05T15:57:48.983478-05:00"
+    },
+    {
+      "id": 17094,
+      "series": "Ash and The Army of Darkness TPB (2014)",
+      "year_began": 2014,
+      "year_end": 2014,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-09-04T11:29:55.750244-04:00"
+    },
+    {
+      "id": 14119,
+      "series": "Ash Vs. The Army of Darkness (2017)",
+      "year_began": 2017,
+      "year_end": 2017,
+      "volume": 1,
+      "issue_count": 6,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 101921,
+      "gcd_id": 114718,
+      "modified": "2025-12-05T20:45:35.033050-05:00"
+    },
+    {
+      "id": 17096,
+      "series": "Ash Vs. The Army of Darkness TPB (2018)",
+      "year_began": 2018,
+      "year_end": 2018,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-09-04T11:57:49.053790-04:00"
+    },
+    {
+      "id": 11413,
+      "series": "Broken Trinity: The Darkness (2008)",
+      "year_began": 2008,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 22487,
+      "gcd_id": 47452,
+      "modified": "2025-04-10T10:23:45.625712-04:00"
+    },
+    {
+      "id": 10260,
+      "series": "Danger Girl and the Army of Darkness (2011)",
+      "year_began": 2011,
+      "year_end": 2012,
+      "volume": 1,
+      "issue_count": 6,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 39878,
+      "gcd_id": 57910,
+      "modified": "2025-02-23T10:43:45.678211-05:00"
+    },
+    {
+      "id": 14912,
+      "series": "Danger Girl and the Army of Darkness TPB (2013)",
+      "year_began": 2013,
+      "year_end": 2013,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-01-26T15:44:39.825188-05:00"
+    },
+    {
+      "id": 10264,
+      "series": "Darkman vs. the Army of Darkness (2006)",
+      "year_began": 2006,
+      "year_end": 2007,
+      "volume": 1,
+      "issue_count": 4,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 18190,
+      "gcd_id": 25332,
+      "modified": "2025-02-23T11:06:14.771721-05:00"
+    },
+    {
+      "id": 7370,
+      "series": "The Darkness (1996)",
+      "year_began": 1996,
+      "year_end": 2001,
+      "volume": 1,
+      "issue_count": 42,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 13,
+        "name": "Single Issue"
+      },
+      "cv_id": 5868,
+      "gcd_id": 5648,
+      "modified": "2025-01-19T11:42:00.361840-05:00"
+    },
+    {
+      "id": 7371,
+      "series": "The Darkness (2002)",
+      "year_began": 2002,
+      "year_end": 2005,
+      "volume": 2,
+      "issue_count": 24,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 13,
+        "name": "Single Issue"
+      },
+      "cv_id": 20344,
+      "gcd_id": 19152,
+      "modified": "2025-01-19T11:42:00.365498-05:00"
+    },
+    {
+      "id": 7372,
+      "series": "The Darkness (2007)",
+      "year_began": 2007,
+      "year_end": 2013,
+      "volume": 3,
+      "issue_count": 52,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 13,
+        "name": "Single Issue"
+      },
+      "cv_id": 20086,
+      "gcd_id": 31376,
+      "modified": "2025-09-12T16:03:58.419450-04:00"
+    },
+    {
+      "id": 13692,
+      "series": "The Darkness (2025)",
+      "year_began": 2025,
+      "year_end": null,
+      "volume": 4,
+      "issue_count": 10,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 13,
+        "name": "Single Issue"
+      },
+      "cv_id": 169122,
+      "gcd_id": 230679,
+      "modified": "2026-11-06T11:11:27.984464-05:00"
+    },
+    {
+      "id": 16840,
+      "series": "The Darkness TPB (2026)",
+      "year_began": 2026,
+      "year_end": null,
+      "volume": 4,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": 239475,
+      "modified": "2026-10-16T12:23:51.447306-04:00"
+    },
+    {
+      "id": 17627,
+      "series": "The Darkness 30th Anniversary Art Gallery (2026)",
+      "year_began": 2026,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-10-16T12:23:51.857284-04:00"
+    },
+    {
+      "id": 11568,
+      "series": "The Darkness and Tomb Raider (2005)",
+      "year_began": 2005,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 18978,
+      "gcd_id": 23094,
+      "modified": "2025-04-19T11:00:40.118925-04:00"
+    },
+    {
+      "id": 11559,
+      "series": "The Darkness / Batman (1999)",
+      "year_began": 1999,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 20323,
+      "gcd_id": 16563,
+      "modified": "2025-04-19T09:34:52.176771-04:00"
+    },
+    {
+      "id": 11569,
+      "series": "The Darkness Black Sails (2005)",
+      "year_began": 2005,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 20993,
+      "gcd_id": 57178,
+      "modified": "2025-04-19T11:02:56.266469-04:00"
+    },
+    {
+      "id": 11575,
+      "series": "The Darkness: Butcher (2008)",
+      "year_began": 2008,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 21038,
+      "gcd_id": 61798,
+      "modified": "2025-04-19T11:51:32.257355-04:00"
+    },
+    {
+      "id": 11570,
+      "series": "The Darkness: Collected Editions (1997)",
+      "year_began": 1997,
+      "year_end": 1999,
+      "volume": 1,
+      "issue_count": 6,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 21378,
+      "gcd_id": 71944,
+      "modified": "2025-04-19T11:05:44.997788-04:00"
+    },
+    {
+      "id": 11576,
+      "series": "The Darkness: Confession, Free Comic Book Day Edition (2011)",
+      "year_began": 2011,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 40018,
+      "gcd_id": 58231,
+      "modified": "2026-04-17T11:28:52.496179-04:00"
+    },
+    {
+      "id": 11560,
+      "series": "The Darkness / Darkchylde: Kingdom Pain (2010)",
+      "year_began": 2010,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 33550,
+      "gcd_id": 49884,
+      "modified": "2025-04-19T09:39:31.773712-04:00"
+    },
+    {
+      "id": 11571,
+      "series": "The Darkness First Look (2007)",
+      "year_began": 2007,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 19503,
+      "gcd_id": 61797,
+      "modified": "2025-04-19T11:13:36.151531-04:00"
+    },
+    {
+      "id": 11577,
+      "series": "The Darkness: Four Horsemen (2010)",
+      "year_began": 2010,
+      "year_end": 2011,
+      "volume": 1,
+      "issue_count": 4,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 35137,
+      "gcd_id": 52766,
+      "modified": "2025-04-19T11:57:39.047532-04:00"
+    },
+    {
+      "id": 11578,
+      "series": "The Darkness: Holiday Pinup Special (1997)",
+      "year_began": 1997,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 21371,
+      "gcd_id": 59252,
+      "modified": "2025-04-19T12:16:32.141175-04:00"
+    },
+    {
+      "id": 11579,
+      "series": "The Darkness: Hope One-Shot (2016)",
+      "year_began": 2016,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 89356,
+      "gcd_id": 99072,
+      "modified": "2025-04-19T12:18:57.391640-04:00"
+    },
+    {
+      "id": 11574,
+      "series": "The Darkness [Level] (2007)",
+      "year_began": 2007,
+      "year_end": 2007,
+      "volume": 1,
+      "issue_count": 6,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 18914,
+      "gcd_id": 26090,
+      "modified": "2025-04-19T11:40:46.230241-04:00"
+    },
+    {
+      "id": 11580,
+      "series": "The Darkness: Lodbrok's Hand (2008)",
+      "year_began": 2008,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 24616,
+      "gcd_id": 59364,
+      "modified": "2025-04-19T12:22:01.401107-04:00"
+    },
+    {
+      "id": 11561,
+      "series": "The Darkness / Pitt (2009)",
+      "year_began": 2009,
+      "year_end": 2009,
+      "volume": 1,
+      "issue_count": 3,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 27557,
+      "gcd_id": 39754,
+      "modified": "2025-04-19T09:43:59.690987-04:00"
+    },
+    {
+      "id": 11562,
+      "series": "The Darkness / Pitt: First Look (2006)",
+      "year_began": 2006,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 21387,
+      "gcd_id": 47676,
+      "modified": "2025-04-19T09:50:30.602576-04:00"
+    },
+    {
+      "id": 11582,
+      "series": "The Darkness: Shadows & Flame (2010)",
+      "year_began": 2010,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 31222,
+      "gcd_id": 52823,
+      "modified": "2025-04-19T14:20:07.130313-04:00"
+    },
+    {
+      "id": 7374,
+      "series": "The Darkness / Superman (2005)",
+      "year_began": 2005,
+      "year_end": 2005,
+      "volume": 1,
+      "issue_count": 2,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 20827,
+      "gcd_id": 24088,
+      "modified": "2025-04-19T09:53:17.053185-04:00"
+    },
+    {
+      "id": 11563,
+      "series": "The Darkness / The Incredible Hulk (2004)",
+      "year_began": 2004,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 20869,
+      "gcd_id": 21013,
+      "modified": "2025-04-19T09:54:43.317352-04:00"
+    },
+    {
+      "id": 15432,
+      "series": "The Darkness Versus Angelus (2026)",
+      "year_began": 2026,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": null,
+      "gcd_id": 236118,
+      "modified": "2026-10-16T12:23:51.935138-04:00"
+    },
+    {
+      "id": 10265,
+      "series": "The Darkness vs. Eva: Daughter of Dracula (2008)",
+      "year_began": 2008,
+      "year_end": 2008,
+      "volume": 1,
+      "issue_count": 4,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 20996,
+      "gcd_id": 61791,
+      "modified": "2025-02-23T11:12:59.153187-05:00"
+    },
+    {
+      "id": 11573,
+      "series": "The Darkness vs. Mr. Hyde: Monster War (2005)",
+      "year_began": 2005,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 138721,
+      "gcd_id": 38424,
+      "modified": "2025-04-19T11:19:30.978155-04:00"
+    },
+    {
+      "id": 17845,
+      "series": "The Darkness vs. The Magdalena (2026)",
+      "year_began": 2026,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-10-25T09:52:54.985200-04:00"
+    },
+    {
+      "id": 11583,
+      "series": "The Darkness: Wanted Dead (2003)",
+      "year_began": 2003,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 4,
+        "name": "Image Comics"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 20995,
+      "gcd_id": 58765,
+      "modified": "2025-04-19T14:22:36.814507-04:00"
+    },
+    {
+      "id": 10292,
+      "series": "Death To the Army of Darkness! (2020)",
+      "year_began": 2020,
+      "year_end": 2020,
+      "volume": 1,
+      "issue_count": 5,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 125148,
+      "gcd_id": 156327,
+      "modified": "2025-02-25T13:37:19.345736-05:00"
+    },
+    {
+      "id": 8831,
+      "series": "Eclipso: The Darkness Within (1992)",
+      "year_began": 1992,
+      "year_end": 1992,
+      "volume": 1,
+      "issue_count": 2,
+      "publisher": {
+        "id": 2,
+        "name": "DC Comics"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 4736,
+      "gcd_id": 4395,
+      "modified": "2024-12-31T14:55:10.077465-05:00"
+    },
+    {
+      "id": 15439,
+      "series": "Frankenstein: New World – The Speed of Darkness (2026)",
+      "year_began": 2026,
+      "year_end": 2026,
+      "volume": 1,
+      "issue_count": 4,
+      "publisher": {
+        "id": 3,
+        "name": "Dark Horse Comics"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 171584,
+      "gcd_id": 236325,
+      "modified": "2026-10-16T12:24:30.548566-04:00"
+    },
+    {
+      "id": 10554,
+      "series": "KISS The Army of Darkness (2018)",
+      "year_began": 2018,
+      "year_end": 2018,
+      "volume": 1,
+      "issue_count": 5,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 108948,
+      "gcd_id": 122583,
+      "modified": "2025-03-12T10:45:38.003532-04:00"
+    },
+    {
+      "id": 10570,
+      "series": "L.A. Banks' Vampire Huntress: The Hidden Darkness (2010)",
+      "year_began": 2010,
+      "year_end": 2011,
+      "volume": 1,
+      "issue_count": 4,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 34758,
+      "gcd_id": 53120,
+      "modified": "2025-03-13T11:45:39.489091-04:00"
+    },
+    {
+      "id": 9736,
+      "series": "Legion of Darkness: The Fourth Eagle (2023)",
+      "year_began": 2023,
+      "year_end": 2023,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 124,
+        "name": "Source Point Press"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": null,
+      "gcd_id": 197563,
+      "modified": "2024-12-22T23:06:38.026097-05:00"
+    },
+    {
+      "id": 11304,
+      "series": "Red Sonja vs. The Army of Darkness (2025)",
+      "year_began": 2025,
+      "year_end": 2025,
+      "volume": 1,
+      "issue_count": 5,
+      "publisher": {
+        "id": 21,
+        "name": "Dynamite Entertainment"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": null,
+      "gcd_id": 222830,
+      "modified": "2026-10-16T17:46:00.735917-04:00"
+    },
+    {
+      "id": 17033,
+      "series": "The Transformers: Heart of Darkness (2011)",
+      "year_began": 2011,
+      "year_end": 2011,
+      "volume": 1,
+      "issue_count": 4,
+      "publisher": {
+        "id": 6,
+        "name": "IDW Publishing"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-09-02T12:33:35.629741-04:00"
+    },
+    {
+      "id": 14774,
+      "series": "Witchblade / Aliens / The Darkness/Predator (2000)",
+      "year_began": 2000,
+      "year_end": 2001,
+      "volume": 1,
+      "issue_count": 3,
+      "publisher": {
+        "id": 3,
+        "name": "Dark Horse Comics"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 20252,
+      "gcd_id": 21784,
+      "modified": "2026-01-21T14:25:10.926626-05:00"
+    }
+  ]
+}
+

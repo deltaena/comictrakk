@@ -7,7 +7,7 @@ import 'package:comictrakk/features/series_detail/presentation/cubit/series_deta
 import 'package:comictrakk/features/series_detail/presentation/widgets/issue_preview_list_item.dart';
 import 'package:comictrakk/core/models/series/series_detail.dart';
 import 'package:comictrakk/core/models/series/series_preview.dart';
-import 'package:comictrakk/core/enums/track_status.dart';
+import 'package:comictrakk/core/enums/comic_tracking_status.dart';
 import 'package:comictrakk/features/series_detail/presentation/widgets/propagation_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,7 +24,7 @@ class SeriesDetailPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<SeriesDetailCubit>(
-          create: (context) => SeriesDetailCubit(seriesPreview: _seriesPreview)
+          create: (context) => SeriesDetailCubit(seriesSnippet: _seriesPreview)
         ),
         BlocProvider<TrackingCubit>(
             create: (context) => TrackingCubit()
@@ -96,13 +96,13 @@ class SeriesDetailView extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             final issue = loadedState.issues[index];
 
-            return BlocSelector<TrackingCubit, TrackingState, ComicStatus> (
+            return BlocSelector<TrackingCubit, TrackingState, ComicTrackingStatus> (
                 selector: (state) {
                   if(state.trackables.isEmpty){
-                    return ComicStatus.fromInt(0);
+                    return ComicTrackingStatus.fromInt(0);
                   }
 
-                  Map<int, ComicStatus> statusesMap = { for (Trackable t in state.trackables) t.id: t.getComicStatus() };
+                  Map<int, ComicTrackingStatus> statusesMap = { for (Trackable t in state.trackables) t.id: t.getComicStatus() };
 
                   if(!statusesMap.containsKey(issue.id)){
                     return issue.getComicStatus();
@@ -115,7 +115,7 @@ class SeriesDetailView extends StatelessWidget {
                   return IssuePreviewListItem(
                     series: series,
                     issue: issue,
-                    onStatusSelected: (ComicStatus selectedStatus) async {
+                    onStatusSelected: (ComicTrackingStatus selectedStatus) async {
                       bool propagate = false;
 
                       TrackingCubit trackingCubit = context.read<TrackingCubit>();

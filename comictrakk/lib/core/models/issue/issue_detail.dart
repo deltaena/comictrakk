@@ -9,9 +9,22 @@ class IssueDetail extends IssuePreview {
     required this.reprints});
 
   factory IssueDetail.fromJson(Map<String, dynamic> json){
+    String issueNumberStr = json["number"].toString();
+
+    double issueNumber = double.negativeInfinity;
+
+    switch(issueNumberStr){
+      case "½":
+        issueNumber = 0.5;
+        break;
+
+      default:
+        double.parse(issueNumberStr);
+    }
+
     return IssueDetail(
       id: json["id"],
-      number: int.parse(json["number"].toString()),
+      number: issueNumber,
       name: json["title"],
       imageUrl: json["image"],
       reprints: (json["reprints"] as List<dynamic>).map((reprint) => Reprint.fromJson(reprint)).toList()

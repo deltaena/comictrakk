@@ -11,8 +11,14 @@ dependencies:
     sdk: flutter
   http: ^1.6.0
   path: ^1.9.1
+
   sqflite: ^2.4.5
-  flutter_bloc: ^8.1.3
+  sqflite_common_ffi: ^2.4.0
+
+  flutter_bloc: ^9.1.1
+  bloc_test: ^10.0.0
+  mocktail: ^1.0.4
+
   flutter_svg: ^2.0.9
 
 dev_dependencies:
@@ -25,3 +31,11 @@ flutter:
 
   assets:
     - assets/images/batman-logo.svg
+
+
+hooks:
+  user_defines:
+    sqlite3:
+      source:
+        linux: system
+        default: sqlite3

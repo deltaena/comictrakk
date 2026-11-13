@@ -1,4 +1,4 @@
-import 'package:comictrakk/core/enums/track_status.dart';
+import 'package:comictrakk/core/enums/comic_tracking_status.dart';
 import 'package:comictrakk/core/local_database/models/tracker_row.dart';
 import 'package:comictrakk/core/local_database/sqlite_service.dart';
 import 'package:comictrakk/core/models/issue/issue_detail.dart';
@@ -10,12 +10,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TrackingCubit extends Cubit<TrackingState> {
 
+  late final ComicApiClient _comicApi;
+  late final SqliteService _dbApi;
+
   bool operating = false;
 
-  TrackingCubit() : super(TrackingLoading());
+  TrackingCubit({ComicApiClient? mockApi, SqliteService? mockDb}) :
+        _comicApi = mockApi ?? ComicApiClient(), _dbApi = mockDb ?? SqliteService(),  super(TrackingLoading());
 
   Future<void> loadInitialStatuses(List<IssuePreview> issues) async {
-    List<TrackerRow> rows = await SqliteService().getTrackers(issues);
+    List<TrackerRow> rows = List.empty(growable: true);
+
+    try {
+      rows.addAll(await _dbApi.getTrackers(issues));
+    } catch(e){
+      emit(TrackingError(message: "Failed to get initial statuses"));
+      return;
+    }
 
     Map<int, TrackerRow> res = { for (TrackerRow row in rows) row.id: row };
 
@@ -25,7 +36,7 @@ class TrackingCubit extends Cubit<TrackingState> {
         int dbStatus = res[issue.id]!.status;
 
         if(issueStatus != dbStatus){
-          issue.setComicStatus(ComicStatus.fromInt(dbStatus));
+          issue.setComicStatus(ComicTrackingStatus.fromInt(dbStatus));
         }
       }
     }
@@ -33,33 +44,41 @@ class TrackingCubit extends Cubit<TrackingState> {
     emit(TrackingLoaded(trackables: issues));
   }
 
-  Future<void> updateTrackingStatus(IssuePreview issue, ComicStatus selectedStatus, [bool propagate = false]) async {
+  Future<void> updateTrackingStatus(IssuePreview issue, ComicTrackingStatus selectedStatus, [bool propagate = false]) async {
     if(operating) return;
-
     operating = true;
 
-    ComicStatus newStatus = selectedStatus;
+    ComicTrackingStatus newStatus = selectedStatus;
     
-    if(issue.getComicStatus().value == selectedStatus.value) newStatus = ComicStatus.notTracking;
+    if(issue.getComicStatus().value == selectedStatus.value) newStatus = ComicTrackingStatus.notTracking;
 
-    bool success = await SqliteService().upsertTracker(issue, newStatus);
+    try {
+      await _dbApi.upsertTracker(issue, newStatus);
+    } catch(e) {
+      emit((TrackingError(message: 'Failed to update tracking status')));
+      return;
+    }
 
-    if(success){
-      issue.setComicStatus(newStatus);
+    issue.setComicStatus(newStatus);
 
-      if(propagate){
-        IssueDetail issueDetail = await ComicApiClient().getIssueDetail(issue);
-        List<Reprint> reprints = issueDetail.reprints;
 
-        await SqliteService().upsertTrackers(reprints, newStatus);
-        
-        for (var reprint in reprints) {
-          reprint.setComicStatus(newStatus);
-        }
+    if(propagate){
+      IssueDetail issueDetail = await _comicApi.getIssueDetail(issue);
+      List<Reprint> reprints = issueDetail.reprints;
+
+      try {
+        await _dbApi.upsertTrackers(reprints, newStatus);
+      } catch(e){
+        emit(TrackingError(message: 'Failed to propagate status'));
+        return;
       }
 
-      emit(TrackingUpdated(trackables: List.filled(1, issue)));
+      for (var reprint in reprints) {
+        reprint.setComicStatus(newStatus);
+      }
     }
+
+    emit(TrackingUpdated(trackables: List.filled(1, issue)));
 
     operating = false;
   }

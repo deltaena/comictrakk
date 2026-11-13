@@ -5,6 +5,7 @@ import 'package:comictrakk/core/models/issue/issue_detail.dart';
 import 'package:comictrakk/core/models/issue/issue_preview.dart';
 import 'package:comictrakk/core/models/series/series_detail.dart';
 import 'package:comictrakk/core/models/series/series_preview.dart';
+import 'package:comictrakk/core/models/series/series_snippet.dart';
 import 'package:http/http.dart' as http;
 
 class ComicApiClient {
@@ -23,24 +24,19 @@ class ComicApiClient {
   ComicApiClient._internal();
   //endregion
 
-  Future<List<SeriesPreview>> searchSeriesPreviewByName(String name) async {
+  Future<List<SeriesPreview>> getSeriesByName(String name) async {
     List<dynamic> seriesMaps = await _searchResourceByName("series", name);
 
     return seriesMaps.map((seriesMap) => SeriesPreview.fromJson(seriesMap)).toList();
   }
-  
-  Future<IssueDetail> getSeriesIssueDetailList(SeriesDetail series) async {
-    Map<String, dynamic> issuesMap = await _getResourceDetail("issue", series.id);
 
-    return IssueDetail.fromJson(issuesMap);
-  }
-  Future<List<IssuePreview>> getSeriesIssuePreviewList(SeriesDetail series) async {
+  Future<List<IssuePreview>> getSeriesIssues(SeriesSnippet series) async {
     List<dynamic> issuesMap = await _getResourceIssuesList("series", series.id);
 
     return issuesMap.map((issueMap) => IssuePreview.fromJson(issueMap)).toList();
   }
 
-  Future<SeriesDetail> getSeriesDetail(SeriesPreview series) async {
+  Future<SeriesDetail> getSeriesDetail(SeriesSnippet series) async {
     Map<String, dynamic> detailMap = await _getResourceDetail("series", series.id);
 
     return SeriesDetail.fromJson(detailMap);

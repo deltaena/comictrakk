@@ -1,5 +1,5 @@
 import 'package:comictrakk/core/models/issue/issue_preview.dart';
-import 'package:comictrakk/core/enums/track_status.dart';
+import 'package:comictrakk/core/enums/comic_tracking_status.dart';
 import 'package:comictrakk/core/models/series/series_detail.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +7,7 @@ class IssuePreviewListItem extends StatelessWidget {
 
   final SeriesDetail series;
   final IssuePreview issue;
-  final Function(ComicStatus selectedStatus) onStatusSelected;
+  final Function(ComicTrackingStatus selectedStatus) onStatusSelected;
 
   const IssuePreviewListItem({super.key, required this.series, required this.issue, required this.onStatusSelected});
 
@@ -58,15 +58,15 @@ class IssuePreviewListItem extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          getIcon(Icons.shopping_bag, ComicStatus.wished),
-          getIcon(Icons.bookmark_add, ComicStatus.haveIt),
-          getIcon(Icons.check_box, ComicStatus.read),
+          getIcon(Icons.shopping_bag, ComicTrackingStatus.wished),
+          getIcon(Icons.bookmark_add, ComicTrackingStatus.have),
+          getIcon(Icons.check_box, ComicTrackingStatus.read),
         ],
       )
     );
   }
 
-  GestureDetector getIcon(IconData icon, ComicStatus iconTrackStatus){
+  GestureDetector getIcon(IconData icon, ComicTrackingStatus iconTrackStatus){
     bool selectionAlreadyPicked = issue.getComicStatus().value == iconTrackStatus.value;
 
     return  GestureDetector(

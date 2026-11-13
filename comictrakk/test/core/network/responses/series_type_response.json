@@ -1,0 +1,43 @@
+{
+  "count": 9,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 6,
+      "name": "Annual"
+    },
+    {
+      "id": 12,
+      "name": "Digital Chapter"
+    },
+    {
+      "id": 9,
+      "name": "Graphic Novel"
+    },
+    {
+      "id": 8,
+      "name": "Hardcover"
+    },
+    {
+      "id": 11,
+      "name": "Limited Series"
+    },
+    {
+      "id": 15,
+      "name": "Omnibus"
+    },
+    {
+      "id": 5,
+      "name": "One-Shot"
+    },
+    {
+      "id": 13,
+      "name": "Single Issue"
+    },
+    {
+      "id": 10,
+      "name": "Trade Paperback"
+    }
+  ]
+}

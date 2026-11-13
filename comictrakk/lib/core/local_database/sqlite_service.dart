@@ -3,7 +3,7 @@ import 'dart:collection';
 
 import 'package:comictrakk/core/models/series/series_snippet.dart';
 import 'package:comictrakk/core/models/trackable/trackable.dart';
-import 'package:comictrakk/core/enums/track_status.dart';
+import 'package:comictrakk/core/enums/comic_tracking_status.dart';
 import 'package:comictrakk/core/local_database/models/tracker_row.dart';
 import 'package:comictrakk/core/local_database/subservices/tracker_subservice.dart';
 import 'package:flutter/widgets.dart';
@@ -11,6 +11,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class SqliteService {
+
 
   //region singleton
   static final SqliteService _singleton = SqliteService._internal();
@@ -22,20 +23,22 @@ class SqliteService {
   SqliteService._internal();
   //endregion
 
-  final TrackerSubservice _trackerServ = TrackerSubservice();
+  final TrackerSubservice trackerServ = TrackerSubservice();
+  
+  Future<bool> upsertTrackers(List<Trackable> trackables, ComicTrackingStatus newStatus) async {
+    List<Map<String, Object?>> trackerRowsList =  await trackerServ.getTrackers(trackables);
 
-  Future<List<Object?>> upsertTrackers(List<Trackable> trackables, ComicStatus newStatus) async {
-    List<Map<String, Object?>> trackerRowsList =  await _trackerServ.getTrackers(trackables);
     Map<int, TrackerRow> rowMap = { for (Map<String, Object?> row in trackerRowsList) int.parse(row["id"]!.toString()) : TrackerRow.fromJson(row) };
 
     List<Trackable> toInsert = List.empty(growable: true);
     List<Trackable> toUpdate = List.empty(growable: true);
     List<Trackable> toDelete = List.empty(growable: true);
 
+
     for(Trackable trackable in trackables) {
       bool isInDb = rowMap.containsKey(trackable.id);
 
-      if(isInDb) trackable.setComicStatus(ComicStatus.fromInt(rowMap[trackable.id]!.status));
+      if(isInDb) trackable.setComicStatus(ComicTrackingStatus.fromInt(rowMap[trackable.id]!.status));
 
       bool sameStatus = trackable.getComicStatus().value == newStatus.value;
 
@@ -56,52 +59,51 @@ class SqliteService {
       toInsert.add(trackable);
     }
 
-    List<Object?> insertResult = await _trackerServ.insertTrackers(toInsert, newStatus);
-    List<Object?> updateResult = await _trackerServ.updateTrackers(toUpdate, newStatus);
-    List<Object?> deleteResult = await _trackerServ.deleteTrackers(toDelete);
+    await trackerServ.insertTrackers(toInsert, newStatus);
+    await trackerServ.updateTrackers(toUpdate, newStatus);
+    await trackerServ.deleteTrackers(toDelete);
 
-    List<Object?> results = List.from(insertResult);
-
-    results.addAll(updateResult);
-    results.addAll(deleteResult);
-
-    return results;
+    return true;
   }
-
-  Future<bool> upsertTracker(Trackable trackable, ComicStatus newStatus) async {
-    List<Map<String, Object?>> getTrackerResult = await _trackerServ.getTracker(trackable);
+  Future<bool> upsertTracker(Trackable trackable, ComicTrackingStatus newStatus) async {
+    List<Map<String, Object?>> getTrackerResult = await trackerServ.getTracker(trackable);
     bool trackerMissing = getTrackerResult.isEmpty;
 
+    //if tracker is not in db: if tracker is 0 ignore, else insert in db
     if(trackerMissing) {
-      int insertedRowId = await _trackerServ.insertTracker(trackable, newStatus);
+      if(newStatus.value == 0){
+        return true;
+      }
 
-      return insertedRowId > 0;
+      int insertedRowId = await trackerServ.insertTracker(trackable, newStatus);
+      return insertedRowId == trackable.id;
     }
 
     bool statusMatches = trackable.getComicStatus().value == newStatus.value;
 
-    if(statusMatches){
-      int deletedRows = await _trackerServ.deleteTracker(trackable);
+    //tracker is in db: if new status is same that already has or new status is not tracking delete
+    if(statusMatches || newStatus.value == 0){
+      int deletedRows = await trackerServ.deleteTracker(trackable);
 
       return deletedRows == 1;
     }
 
-    int updatedRows = await _trackerServ.updateTracker(trackable, newStatus);
+    //tracker is in db and is new status is different than not tracking and different from current
+    int updatedRows = await trackerServ.updateTracker(trackable, newStatus);
 
     return updatedRows == 1;
   }
 
+  Future<List<TrackerRow>> getAllTrackers() async {
+    List<Map<String, Object?>> rows = await trackerServ.getAllTrackers();
+
+    return rows.map((row) => TrackerRow.fromJson(row)).toList();
+  }
   Future<List<TrackerRow>> getTrackers(List<Trackable> trackable) async {
-    List<Map<String, Object?>> rows = await _trackerServ.getTrackers(trackable);
+    List<Map<String, Object?>> rows = await trackerServ.getTrackers(trackable);
 
     return rows.map((row) => TrackerRow.fromJson(row)).toList();
   }
-  Future<List<TrackerRow>> getTracker(Trackable trackable) async {
-    List<Map<String, Object?>> rows = await _trackerServ.getTracker(trackable);
-
-    return rows.map((row) => TrackerRow.fromJson(row)).toList();
-  }
-
 }
 
 

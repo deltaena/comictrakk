@@ -1,0 +1,387 @@
+{
+  "count": 20,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 2426,
+      "series": "Absolute Carnage: Miles Morales (2019)",
+      "year_began": 2019,
+      "year_end": 2019,
+      "volume": 1,
+      "issue_count": 3,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 120946,
+      "gcd_id": 148756,
+      "modified": "2024-12-26T17:00:57.617402-05:00"
+    },
+    {
+      "id": 15717,
+      "series": "Astonishing Miles Morales: Spider-Man Infinity Comic (2025) Digital",
+      "year_began": 2025,
+      "year_end": 2025,
+      "volume": 1,
+      "issue_count": 12,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 12,
+        "name": "Digital Chapter"
+      },
+      "cv_id": 166117,
+      "gcd_id": null,
+      "modified": "2026-10-16T17:43:34.576546-04:00"
+    },
+    {
+      "id": 15630,
+      "series": "Astonishing Miles Morales: Spider-Man – The Art of Thwip (2026)",
+      "year_began": 2026,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-10-16T12:23:11.766655-04:00"
+    },
+    {
+      "id": 9378,
+      "series": "Generations: Miles Morales: Spider-Man & Peter Parker: Spider-Man (2017)",
+      "year_began": 2017,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 104612,
+      "gcd_id": 116985,
+      "modified": "2025-07-06T10:42:29.285389-04:00"
+    },
+    {
+      "id": 3976,
+      "series": "Miles Morales: Marvel Universe TPB (2022)",
+      "year_began": 2022,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": 186121,
+      "modified": "2024-12-28T11:23:55.472055-05:00"
+    },
+    {
+      "id": 3513,
+      "series": "Miles Morales & Moon Girl (2022)",
+      "year_began": 2022,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 143843,
+      "gcd_id": 186468,
+      "modified": "2024-12-28T11:23:47.971890-05:00"
+    },
+    {
+      "id": 2381,
+      "series": "Miles Morales: Shock Waves GN (2021)",
+      "year_began": 2021,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 41,
+        "name": "Graphix"
+      },
+      "series_type": {
+        "id": 9,
+        "name": "Graphic Novel"
+      },
+      "cv_id": null,
+      "gcd_id": 174397,
+      "modified": "2025-10-07T10:04:19.316650-04:00"
+    },
+    {
+      "id": 2361,
+      "series": "Miles Morales: Spider-Man (2019)",
+      "year_began": 2019,
+      "year_end": 2022,
+      "volume": 1,
+      "issue_count": 42,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 13,
+        "name": "Single Issue"
+      },
+      "cv_id": 115897,
+      "gcd_id": 135468,
+      "modified": "2024-12-28T11:24:11.158717-05:00"
+    },
+    {
+      "id": 5980,
+      "series": "Miles Morales: Spider-Man TPB (2019)",
+      "year_began": 2019,
+      "year_end": 2022,
+      "volume": 1,
+      "issue_count": 8,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2025-01-12T17:47:34.431278-05:00"
+    },
+    {
+      "id": 3978,
+      "series": "Miles Morales: Spider-Man (2023)",
+      "year_began": 2023,
+      "year_end": 2026,
+      "volume": 2,
+      "issue_count": 42,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 13,
+        "name": "Single Issue"
+      },
+      "cv_id": 146734,
+      "gcd_id": 193893,
+      "modified": "2026-10-16T17:51:05.738387-04:00"
+    },
+    {
+      "id": 5981,
+      "series": "Miles Morales: Spider-Man TPB (2023)",
+      "year_began": 2023,
+      "year_end": null,
+      "volume": 2,
+      "issue_count": 4,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 10,
+        "name": "Trade Paperback"
+      },
+      "cv_id": null,
+      "gcd_id": null,
+      "modified": "2026-10-16T17:51:05.467935-04:00"
+    },
+    {
+      "id": 16445,
+      "series": "Miles Morales: Spider-Man (2026)",
+      "year_began": 2026,
+      "year_end": null,
+      "volume": 3,
+      "issue_count": 5,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 13,
+        "name": "Single Issue"
+      },
+      "cv_id": 175739,
+      "gcd_id": 238556,
+      "modified": "2026-11-04T15:33:57.636679-05:00"
+    },
+    {
+      "id": 2566,
+      "series": "Miles Morales: Spider-Man Annual (2021)",
+      "year_began": 2021,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 6,
+        "name": "Annual"
+      },
+      "cv_id": 138346,
+      "gcd_id": 175349,
+      "modified": "2024-12-28T11:24:26.107547-05:00"
+    },
+    {
+      "id": 8180,
+      "series": "Miles Morales: Spider-Man Annual (2024)",
+      "year_began": 2024,
+      "year_end": 2024,
+      "volume": 2,
+      "issue_count": 1,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 6,
+        "name": "Annual"
+      },
+      "cv_id": null,
+      "gcd_id": 214634,
+      "modified": "2026-10-16T17:51:05.806175-04:00"
+    },
+    {
+      "id": 15530,
+      "series": "Miles Morales: Spider-Man - Brooklyn's Finest Infinity Comic (2026) Digital",
+      "year_began": 2026,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 11,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 12,
+        "name": "Digital Chapter"
+      },
+      "cv_id": 169967,
+      "gcd_id": null,
+      "modified": "2026-10-16T12:25:46.498933-04:00"
+    },
+    {
+      "id": 2910,
+      "series": "Miles Morales: The End (2020)",
+      "year_began": 2020,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 124125,
+      "gcd_id": 154505,
+      "modified": "2024-12-28T11:24:32.255849-05:00"
+    },
+    {
+      "id": 2271,
+      "series": "Miles Morales: Ultimate Spider-Man (2014)",
+      "year_began": 2014,
+      "year_end": 2015,
+      "volume": 1,
+      "issue_count": 12,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 13,
+        "name": "Single Issue"
+      },
+      "cv_id": 73678,
+      "gcd_id": 80565,
+      "modified": "2024-12-28T11:24:37.195865-05:00"
+    },
+    {
+      "id": 9290,
+      "series": "Peter Parker & Miles Morales: Spider-Men Double Trouble (2023)",
+      "year_began": 2023,
+      "year_end": 2023,
+      "volume": 1,
+      "issue_count": 4,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 146605,
+      "gcd_id": 193593,
+      "modified": "2024-12-22T14:37:28.138623-05:00"
+    },
+    {
+      "id": 5328,
+      "series": "Strange Academy: Miles Morales (2023)",
+      "year_began": 2023,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 1,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 5,
+        "name": "One-Shot"
+      },
+      "cv_id": 152655,
+      "gcd_id": 202907,
+      "modified": "2025-01-05T15:44:46.043501-05:00"
+    },
+    {
+      "id": 3190,
+      "series": "What If...? Miles Morales (2022)",
+      "year_began": 2022,
+      "year_end": null,
+      "volume": 1,
+      "issue_count": 5,
+      "publisher": {
+        "id": 1,
+        "name": "Marvel"
+      },
+      "series_type": {
+        "id": 11,
+        "name": "Limited Series"
+      },
+      "cv_id": 141786,
+      "gcd_id": 182315,
+      "modified": "2026-10-07T16:08:34.704219-04:00"
+    }
+  ]
+}
