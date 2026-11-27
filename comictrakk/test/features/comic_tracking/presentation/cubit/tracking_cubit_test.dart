@@ -1,12 +1,12 @@
 import 'dart:io';
 
-import 'package:comictrakk/core/enums/comic_tracking_status.dart';
+import 'package:comictrakk/core/enums/tracking_status.dart';
 import 'package:comictrakk/core/local_database/models/tracker_row.dart';
-import 'package:comictrakk/core/local_database/sqlite_service.dart';
-import 'package:comictrakk/core/models/issue/issue_detail.dart';
-import 'package:comictrakk/core/models/issue/issue_preview.dart';
+import 'package:comictrakk/core/local_database/sqlite_client.dart';
+import 'package:comictrakk/core/models/issues/issue_detail.dart';
+import 'package:comictrakk/core/models/issues/issue_preview.dart';
 import 'package:comictrakk/core/models/series/series_preview.dart';
-import 'package:comictrakk/core/models/trackable/trackable.dart';
+import 'package:comictrakk/core/models/trackers/trackers.dart';
 import 'package:comictrakk/features/comic_tracking/presentation/tracking_cubit.dart';
 import 'package:comictrakk/features/comic_tracking/presentation/tracking_state.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -24,31 +24,27 @@ void main() {
   MockComicApiClient mockApi = MockComicApiClient();
 
   Future<void> closeDatabase() async {
-    await SqliteService().trackerServ.closeDatabase();
+    await SqliteClient().trackerServ.closeDatabase();
   }
   Future<void> insertInitialMockDbData() async {
     List<IssuePreview> issues = MockModels().mockTrackedIssues;
 
-    List<IssuePreview> issuesWish = issues
-        .where((issue) => issue.id == 1)
-        .toList();
-    List<IssuePreview> issuesHave = issues
-        .where((issue) => issue.id == 2)
-        .toList();
-    List<IssuePreview> issuesRead = issues
-        .where((issue) => issue.id == 3)
-        .toList();
+    int wishIndex = issues.indexWhere((issue) => issue.id == 1);
+    issues[wishIndex].setComicStatus(TrackingStatus.wish);
 
-    await SqliteService().upsertTrackers(issuesWish, ComicTrackingStatus.wished);
-    await SqliteService().upsertTrackers(issuesHave, ComicTrackingStatus.have);
-    await SqliteService().upsertTrackers(issuesRead, ComicTrackingStatus.read);
+    int haveIndex = issues.indexWhere((issue) => issue.id == 2);
+    issues[haveIndex].setComicStatus(TrackingStatus.have);
 
+    int readIndex = issues.indexWhere((issue) => issue.id == 3);
+    issues[readIndex].setComicStatus(TrackingStatus.read);
 
-    List<TrackerRow> rows = await SqliteService().getAllTrackers();
+    await SqliteClient().upsertTrackers(issues);
+
+    List<TrackerRow> rows = await SqliteClient().getAllTrackers();
     expect(rows.length, 3);
   }
   Future<void> clearDatabase() async {
-    bool cleared = await SqliteService().trackerServ.deleteAllTrackers();
+    bool cleared = await SqliteClient().trackerServ.deleteAllTrackers();
 
     expect(cleared, true);
   }
@@ -60,8 +56,6 @@ void main() {
     File dbFile = File(dbPath);
 
     if(await dbFile.exists()) dbFile.delete();
-
-    print("db deleted");
   });
 
   group("TrackingCubit load initial data", () {
@@ -92,19 +86,19 @@ void main() {
       expect(trackingCubit.state, isA<TrackingLoaded>());
 
       TrackingLoaded loadedStatus = trackingCubit.state as TrackingLoaded;
-      List<Trackable> trackables = loadedStatus.trackables;
+      List<Tracker> trackables = loadedStatus.issues;
 
       expect(trackables.length, 4);
 
-      Trackable zero = trackables.firstWhere((track) => track.id == 0);
-      Trackable one = trackables.firstWhere((track) => track.id == 1);
-      Trackable two = trackables.firstWhere((track) => track.id == 2);
-      Trackable three = trackables.firstWhere((track) => track.id == 3);
+      Tracker zero = trackables.firstWhere((track) => track.id == 0);
+      Tracker one = trackables.firstWhere((track) => track.id == 1);
+      Tracker two = trackables.firstWhere((track) => track.id == 2);
+      Tracker three = trackables.firstWhere((track) => track.id == 3);
 
-      expect(zero.getComicStatus().value, ComicTrackingStatus.notTracking.value);
-      expect(one.getComicStatus().value, ComicTrackingStatus.wished.value);
-      expect(two.getComicStatus().value, ComicTrackingStatus.have.value);
-      expect(three.getComicStatus().value, ComicTrackingStatus.read.value);
+      expect(zero.getComicStatus().value, TrackingStatus.notTracking.value);
+      expect(one.getComicStatus().value, TrackingStatus.wish.value);
+      expect(two.getComicStatus().value, TrackingStatus.have.value);
+      expect(three.getComicStatus().value, TrackingStatus.read.value);
     });
   });
 
@@ -120,14 +114,14 @@ void main() {
     tearDown(() => trackingCubit.close());
     //endregion
 
-    test("update each issue to next status", () async {
+    test("update each issues to next status", () async {
       List<IssuePreview> issues = MockModels().mockTrackedIssues;
 
       for (IssuePreview issue in issues) {
         int id = issue.id;
         int newStatusId = (id + 1) % 4;
 
-        ComicTrackingStatus newStatus = ComicTrackingStatus.fromInt(
+        TrackingStatus newStatus = TrackingStatus.fromInt(
             newStatusId);
 
         await trackingCubit.updateTrackingStatus(issue, newStatus);
@@ -137,14 +131,14 @@ void main() {
 
         TrackingUpdated updatedState = trackingCubit.state as TrackingUpdated;
 
-        expect(updatedState.trackables.length, 1);
-        expect(updatedState.trackables[0]
+        expect(updatedState.issues.length, 1);
+        expect(updatedState.issues[0]
             .getComicStatus()
             .value, newStatus.value);
       }
 
       //test what's in db
-      List<TrackerRow> rows = await SqliteService().getTrackers(issues);
+      List<TrackerRow> rows = await SqliteClient().getTrackers(issues);
 
       expect(rows.length, 3);
       expect(rows.where((row) => row.id == 3).toList().length, 0);
@@ -166,21 +160,21 @@ void main() {
     tearDown(() => trackingCubit.close());
     //endregion
 
-    Future<void> testPropagationEmit(IssueDetail detail, ComicTrackingStatus newStatus) async {
+    Future<void> testPropagationEmit(IssueDetail detail, TrackingStatus newStatus) async {
       await trackingCubit.updateTrackingStatus(detail, newStatus, true);
 
       expect(trackingCubit.state, isA<TrackingUpdated>());
 
       TrackingUpdated updatedStatus = trackingCubit.state as TrackingUpdated;
 
-      expect(updatedStatus.trackables.length, 1);
+      expect(updatedStatus.issues.length, 1);
 
-      expect(updatedStatus.trackables[0].id, detail.id);
-      expect(updatedStatus.trackables[0].getComicStatus().value, newStatus.value);
+      expect(updatedStatus.issues[0].id, detail.id);
+      expect(updatedStatus.issues[0].getComicStatus().value, newStatus.value);
     }
 
-    Future<void> testPropagationSql(int expectedLength, ComicTrackingStatus expectedStatus) async {
-      List<TrackerRow> rows = await SqliteService().getAllTrackers();
+    Future<void> testPropagationSql(int expectedLength, TrackingStatus expectedStatus) async {
+      List<TrackerRow> rows = await SqliteClient().getAllTrackers();
 
       expect(rows.length, expectedLength);
 
@@ -192,7 +186,7 @@ void main() {
     test("parent insert (not to any)", () async {
       IssueDetail detail = MockModels().mockIssueDetail;
 
-      ComicTrackingStatus newStatus = ComicTrackingStatus.have;
+      TrackingStatus newStatus = TrackingStatus.have;
 
       await testPropagationEmit(detail, newStatus);
       await testPropagationSql(5, newStatus);
@@ -200,9 +194,9 @@ void main() {
 
     test("parent update (any to any)", () async {
       IssueDetail detail = MockModels().mockIssueDetail;
-      detail.setComicStatus(ComicTrackingStatus.wished);
+      detail.setComicStatus(TrackingStatus.wish);
 
-      ComicTrackingStatus newStatus = ComicTrackingStatus.read;
+      TrackingStatus newStatus = TrackingStatus.read;
 
       await testPropagationEmit(detail, newStatus);
       await testPropagationSql(5, newStatus);
@@ -210,9 +204,9 @@ void main() {
 
     test("parent delete (any to not)", () async {
       IssueDetail detail = MockModels().mockIssueDetail;
-      detail.setComicStatus(ComicTrackingStatus.have);
+      detail.setComicStatus(TrackingStatus.have);
 
-      ComicTrackingStatus newStatus = ComicTrackingStatus.notTracking;
+      TrackingStatus newStatus = TrackingStatus.notTracking;
 
       await testPropagationEmit(detail, newStatus);
       await testPropagationSql(0, newStatus);
@@ -232,7 +226,7 @@ void main() {
 
       TrackingError errorState = mockCubit.state as TrackingError;
 
-      expect(errorState.trackables.isEmpty, true);
+      expect(errorState.issues.isEmpty, true);
       expect(errorState.message, "Failed to get initial statuses");
     });
 
@@ -244,13 +238,13 @@ void main() {
 
       List<IssuePreview> issues = MockModels().mockTrackedIssues;
 
-      await mockCubit.updateTrackingStatus(issues[0], ComicTrackingStatus.notTracking);
+      await mockCubit.updateTrackingStatus(issues[0], TrackingStatus.notTracking);
 
       expect(mockCubit.state, isA<TrackingError>());
 
       TrackingError errorState = mockCubit.state as TrackingError;
 
-      expect(errorState.trackables.isEmpty, true);
+      expect(errorState.issues.isEmpty, true);
       expect(errorState.message, "Failed to update tracking status");
     });
 
@@ -261,13 +255,13 @@ void main() {
 
       List<IssuePreview> issues = MockModels().mockTrackedIssues;
 
-      await mockCubit.updateTrackingStatus(issues[0], ComicTrackingStatus.notTracking, true);
+      await mockCubit.updateTrackingStatus(issues[0], TrackingStatus.notTracking, true);
 
       expect(mockCubit.state, isA<TrackingError>());
 
       TrackingError errorState = mockCubit.state as TrackingError;
 
-      expect(errorState.trackables.isEmpty, true);
+      expect(errorState.issues.isEmpty, true);
       expect(errorState.message, "Failed to propagate status");
     });
 

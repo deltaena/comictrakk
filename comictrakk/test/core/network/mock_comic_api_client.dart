@@ -1,6 +1,6 @@
-import 'package:comictrakk/core/models/issue/issue_detail.dart';
-import 'package:comictrakk/core/models/issue/issue_preview.dart';
-import 'package:comictrakk/core/models/series/series_detail.dart';
+import 'package:comictrakk/core/models/issues/issue_detail.dart';
+import 'package:comictrakk/core/models/issues/issue_preview.dart';
+import 'package:comictrakk/core/models/series/series_details.dart';
 import 'package:comictrakk/core/models/series/series_preview.dart';
 import 'package:comictrakk/core/models/series/series_snippet.dart';
 import 'package:comictrakk/core/network/comic_api_client.dart';
@@ -16,7 +16,7 @@ class MockComicApiClient extends Mock implements ComicApiClient {
   set testBehaviour(String value) { _testBehaviour = value; }
 
   @override
-  Future<IssueDetail> getIssueDetail(IssuePreview issue) async {
+  Future<IssueDetail> fetchIssueDetail(IssuePreview issue) async {
     if(_testBehaviour == "wait") await Future.delayed(Duration(seconds: 1));
     if(_testBehaviour == "fail") throw Exception("Something went wrong...");
 
@@ -34,7 +34,7 @@ class MockComicApiClient extends Mock implements ComicApiClient {
   }
 
   @override
-  Future<List<IssuePreview>> getSeriesIssues(SeriesSnippet series) async {
+  Future<List<IssuePreview>> fetchIssuesInSeries(SeriesSnippet series) async {
     if(_testBehaviour == "wait") await Future.delayed(Duration(seconds: 1));
     if(_testBehaviour == "fail") throw Exception("Something went wrong...");
 

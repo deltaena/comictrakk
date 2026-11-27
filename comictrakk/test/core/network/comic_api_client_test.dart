@@ -1,6 +1,6 @@
-import 'package:comictrakk/core/models/issue/issue_detail.dart';
-import 'package:comictrakk/core/models/issue/issue_preview.dart';
-import 'package:comictrakk/core/models/series/series_detail.dart';
+import 'package:comictrakk/core/models/issues/issue_detail.dart';
+import 'package:comictrakk/core/models/issues/issue_preview.dart';
+import 'package:comictrakk/core/models/series/series_details.dart';
 import 'package:comictrakk/core/models/series/series_preview.dart';
 import 'package:comictrakk/core/models/series/series_snippet.dart';
 import 'package:comictrakk/core/network/comic_api_client.dart';
@@ -68,7 +68,7 @@ void main(){
     test("getSeriesIssues", () async {
       Map<int, IssuePreview> issuesMap = { for(IssuePreview issue in await getSeriesIssues()) issue.id: issue };
 
-      List<IssuePreview> netIssues = await ComicApiClient().getSeriesIssues(await getSeriesDetails());
+      List<IssuePreview> netIssues = await ComicApiClient().fetchIssuesInSeries(await getSeriesDetails());
 
       expect(issuesMap.keys.length, netIssues.length);
 
@@ -82,7 +82,7 @@ void main(){
 
       IssuePreview issueToSearch = (await getSeriesIssues()).firstWhere((item) => item.id == localDetails.id);
 
-      IssueDetail netDetails = await ComicApiClient().getIssueDetail(issueToSearch);
+      IssueDetail netDetails = await ComicApiClient().fetchIssueDetail(issueToSearch);
 
       expect(localDetails.hashCode, netDetails.hashCode);
       expect(localDetails, netDetails);

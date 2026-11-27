@@ -1,0 +1,6 @@
+enum Operation {
+
+  insert,
+  delete
+
+}

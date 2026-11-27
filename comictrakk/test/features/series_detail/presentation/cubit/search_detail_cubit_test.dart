@@ -46,7 +46,7 @@ void main(){
 
       SeriesDetailLoaded loadedState = seriesDetailCubit.state as SeriesDetailLoaded;
 
-      expect(loadedState.series.id, 5537);
+      expect(loadedState.mergers.id, 5537);
       expect(loadedState.issues.length, 100);
     });
 
