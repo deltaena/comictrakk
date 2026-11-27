@@ -1,5 +1,5 @@
-import 'package:comictrakk/features/search/presentation/cubit/search_cubit.dart';
-import 'package:comictrakk/features/search/presentation/cubit/search_state.dart';
+import 'package:comictrakk/features/search/presentation/cubit/search_page_cubit.dart';
+import 'package:comictrakk/features/search/presentation/cubit/search_page_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../../core/network/mock_comic_api_client.dart';
@@ -7,11 +7,11 @@ import '../../../../core/network/mock_comic_api_client.dart';
 void main(){
 
   group('SearchCubit', () {
-    late SearchCubit searchCubit;
+    late SearchPageCubit searchCubit;
     MockComicApiClient mockApi = MockComicApiClient();
 
     setUp(() {
-      searchCubit = SearchCubit(mockApi: mockApi);
+      searchCubit = SearchPageCubit(mockApi: mockApi);
     });
 
     tearDown(() {

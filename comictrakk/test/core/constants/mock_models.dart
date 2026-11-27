@@ -1,7 +1,7 @@
-import 'package:comictrakk/core/enums/comic_tracking_status.dart';
-import 'package:comictrakk/core/models/issue/issue_detail.dart';
-import 'package:comictrakk/core/models/issue/issue_preview.dart';
-import 'package:comictrakk/core/models/reprint/reprint.dart';
+import 'package:comictrakk/core/enums/tracking_status.dart';
+import 'package:comictrakk/core/models/issues/issue_detail.dart';
+import 'package:comictrakk/core/models/issues/issue_preview.dart';
+import 'package:comictrakk/core/models/reprint/reprints.dart';
 import 'package:comictrakk/core/models/series/series_preview.dart';
 import 'package:comictrakk/core/models/series/series_snippet.dart';
 import 'package:comictrakk/core/models/series/series_type.dart';
@@ -20,7 +20,7 @@ class MockModels {
     if(_mockTrackingIssues.isNotEmpty) return _mockTrackingIssues;
 
     for(int id in _issuesIds){
-      Map<String, dynamic> issueMap = {"id": id, "number": 0, "issue": "issue", "image": "https//:url"};
+      Map<String, dynamic> issueMap = {"id": id, "number": "0", "issues": "issues", "image": "https//:url"};
 
       _mockTrackingIssues.add(IssuePreview.fromJson(issueMap));
     }
@@ -33,7 +33,7 @@ class MockModels {
     if(_mockReprint.isNotEmpty) return _mockReprint;
 
     for(int id in _issuesIds){
-      Map<String, dynamic> issueMap = {"id": id, "issue": "issue"};
+      Map<String, dynamic> issueMap = {"id": id, "issues": "issues"};
 
       _mockReprint.add(Reprint.fromJson(issueMap));
     }
@@ -47,13 +47,13 @@ class MockModels {
     if(_mockReprintMap.isNotEmpty) return _mockReprintMap;
 
     for(int id in _issuesIds) {
-      _mockReprintMap.add({"id": id, "issue": "issue"});
+      _mockReprintMap.add({"id": id, "issues": "issues"});
     }
 
     return _mockReprintMap;
   }
 
-  late IssueDetail mockIssueDetail = IssueDetail.fromJson({"id": 5, "number": -1, "title": "title", "image": "https://url", "reprints": mockReprintsMap});
+  late IssueDetail mockIssueDetail = IssueDetail.fromJson({"id": 5, "number": "-1", "title": "title", "image": "https://url", "reprints": mockReprintsMap});
 
   Future<List<SeriesPreview>> get mockSeriesPreviewAllTypes async {
     List<SeriesPreview> seriesPreviews = List.empty(growable: true);

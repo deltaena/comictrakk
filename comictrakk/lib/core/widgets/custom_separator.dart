@@ -8,7 +8,7 @@ class CustomSeparator extends StatelessWidget {
     return const Padding(
         padding: EdgeInsetsGeometry.fromLTRB(0, 2, 0, 2),
         child: SizedBox(
-          height: 1,
+          height: 2,
           width: double.infinity,
           child: ColoredBox(color: Color(0xFF000000)),
         )

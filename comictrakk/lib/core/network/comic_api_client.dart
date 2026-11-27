@@ -1,15 +1,10 @@
 import 'dart:convert';
 
 import 'package:comictrakk/core/config/secrets.dart';
-import 'package:comictrakk/core/models/issue/issue_detail.dart';
-import 'package:comictrakk/core/models/issue/issue_preview.dart';
-import 'package:comictrakk/core/models/series/series_detail.dart';
-import 'package:comictrakk/core/models/series/series_preview.dart';
-import 'package:comictrakk/core/models/series/series_snippet.dart';
+import 'package:comictrakk/core/network/models/api_headers.dart';
 import 'package:http/http.dart' as http;
 
 class ComicApiClient {
-
   final String _baseUrl = "https://metron.cloud/api";
 
   late final String _tokenAuth = 'Bearer ${Secrets().token}';
@@ -22,60 +17,90 @@ class ComicApiClient {
   }
 
   ComicApiClient._internal();
+
   //endregion
 
-  Future<List<SeriesPreview>> getSeriesByName(String name) async {
-    List<dynamic> seriesMaps = await _searchResourceByName("series", name);
+  Future<List<dynamic>> getSeriesByName(String name) async =>
+      await _getResourceByName("series", name);
 
-    return seriesMaps.map((seriesMap) => SeriesPreview.fromJson(seriesMap)).toList();
-  }
+  Future<Map<String, dynamic>> getSeriesDetail(int seriesId) async =>
+      await _getResourceDetail("series", seriesId);
 
-  Future<List<IssuePreview>> getSeriesIssues(SeriesSnippet series) async {
-    List<dynamic> issuesMap = await _getResourceIssuesList("series", series.id);
+  Future<List<dynamic>> fetchIssuesInSeries(int seriesId) async =>
+      await _getResourceIssuesList("series", seriesId);
 
-    return issuesMap.map((issueMap) => IssuePreview.fromJson(issueMap)).toList();
-  }
-
-  Future<SeriesDetail> getSeriesDetail(SeriesSnippet series) async {
-    Map<String, dynamic> detailMap = await _getResourceDetail("series", series.id);
-
-    return SeriesDetail.fromJson(detailMap);
-  }
-  Future<IssueDetail> getIssueDetail(IssuePreview issue) async {
-    Map<String, dynamic> detailMap = await _getResourceDetail("issue", issue.id);
-
-    return IssueDetail.fromJson(detailMap);
-  }
+  Future<Map<String, dynamic>> fetchIssueDetail(int issueId) async =>
+      await _getResourceDetail("issue", issueId);
 
   //region methods
-  Future<List<dynamic>> _searchResourceByName(String resourceName, String name) async {
-    Uri uri = Uri.parse('$_baseUrl/$resourceName/?name=${name.replaceAll(" ", "%20")}');
+  Future<List<dynamic>> _getResourceByName(
+    String resourceName,
+    String name,
+  ) async {
+    Uri uri = Uri.parse(
+      '$_baseUrl/$resourceName/?name=${name.replaceAll(" ", "%20")}',
+    );
 
     Map<String, dynamic> body = await _executeQuery(uri);
 
     return body["results"];
   }
 
-  Future<List<dynamic>> _getResourceIssuesList(String resourceName, int resourceId) async {
-    Uri uri =  Uri.parse('$_baseUrl/$resourceName/$resourceId/issue_list');
+  Future<List<dynamic>> _getResourceIssuesList(
+    String resourceName,
+    int resourceId,
+  ) async {
+    Uri uri = Uri.parse('$_baseUrl/$resourceName/$resourceId/issue_list');
 
     Map<String, dynamic> body = await _executeQuery(uri);
 
     return body["results"];
   }
 
-  Future<Map<String, dynamic>> _getResourceDetail(String resourceName, int resourceId) async {
+  Future<Map<String, dynamic>> _getResourceDetail(
+    String resourceName,
+    int resourceId,
+  ) async {
     Uri uri = Uri.parse('$_baseUrl/$resourceName/$resourceId');
 
     return await _executeQuery(uri);
   }
 
+  DateTime nextPetitionThreshold = DateTime(1970);
+
   Future<Map<String, dynamic>> _executeQuery(Uri uri) async {
-    http.Response response = await http.get(uri,
+    DateTime petitionNow = DateTime.now();
+
+    Duration nextPetitionRemainingTime = nextPetitionThreshold.difference(
+      petitionNow,
+    );
+
+    if (!nextPetitionRemainingTime.isNegative) {
+      await Future.delayed(nextPetitionRemainingTime);
+    }
+
+    print("deltalog: executing $uri");
+    http.Response response = await http.get(
+      uri,
       headers: {'Authorization': _tokenAuth},
     );
 
     if (response.statusCode == 200) {
+      ApiHeaders headers = ApiHeaders.fromMap(response.headers);
+
+      DateTime resetTime = DateTime.fromMillisecondsSinceEpoch(
+        headers.burstReset * 1000,
+      );
+      DateTime resetNow = DateTime.now();
+
+      double milisUntilReset =
+          resetTime.difference(resetNow).inMilliseconds /
+          headers.burstRemaining;
+
+      nextPetitionThreshold = resetNow.add(
+        Duration(milliseconds: milisUntilReset.ceil()),
+      );
+
       return jsonDecode(response.body);
     } else {
       throw Exception("error code ${response.statusCode} on petition: $uri");

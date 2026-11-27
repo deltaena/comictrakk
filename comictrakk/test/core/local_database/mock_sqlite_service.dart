@@ -1,15 +1,15 @@
-import 'package:comictrakk/core/enums/comic_tracking_status.dart';
+import 'package:comictrakk/core/enums/tracking_status.dart';
 import 'package:comictrakk/core/local_database/models/tracker_row.dart';
-import 'package:comictrakk/core/local_database/sqlite_service.dart';
-import 'package:comictrakk/core/local_database/subservices/tracker_subservice.dart';
-import 'package:comictrakk/core/models/trackable/trackable.dart';
+import 'package:comictrakk/core/local_database/sqlite_client.dart';
+import 'package:comictrakk/core/local_database/subservices/tracker_service.dart';
+import 'package:comictrakk/core/models/trackers/trackers.dart';
 
-class MockSqliteService implements SqliteService {
+class MockSqliteService implements SqliteClient {
 
   bool fail = false;
 
   @override
-  TrackerSubservice get trackerServ => TrackerSubservice();
+  TrackerService get trackerServ => TrackerService();
 
 
   @override
@@ -20,14 +20,14 @@ class MockSqliteService implements SqliteService {
   }
 
   @override
-  Future<List<TrackerRow>> getTrackers(List<Trackable> trackable) {
+  Future<List<TrackerRow>> getTrackers(List<Tracker> trackable) {
     if(fail) throw Exception("simulated exception");
 
     return Future.value(List.empty());
   }
 
   @override
-  Future<bool> upsertTracker(Trackable trackable, ComicTrackingStatus newStatus) {
+  Future<bool> upsertTracker(Tracker trackable) {
     if(fail) throw Exception("simulated exception");
 
     fail = true;
@@ -36,7 +36,7 @@ class MockSqliteService implements SqliteService {
   }
 
   @override
-  Future<bool> upsertTrackers(List<Trackable> trackables, ComicTrackingStatus newStatus) {
+  Future<bool> upsertTrackers(List<Tracker> trackables) {
     if(fail) throw Exception("simulated exception");
 
     return Future.value(true);
