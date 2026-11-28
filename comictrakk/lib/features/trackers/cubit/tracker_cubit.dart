@@ -21,7 +21,26 @@ class TrackerCubit extends Cubit<TrackerState> {
 
   StreamSubscription<List<TrackerMerger>>? _subscription;
 
-  new({required this._repo, required this._issuesRepo, required this._reprintRepo}) : super(TrackerInitial());
+  new({
+    required this._repo,
+    required this._issuesRepo,
+    required this._reprintRepo,
+  }) : super(TrackerInitial());
+
+  Future<void> listenToAllTrackers() async {
+    await _subscription?.cancel();
+
+    _subscription = _repo.watchAllTrackers().listen(
+      (trackers) {
+        if (isClosed) return;
+        emit(TrackerLoaded(trackers));
+      },
+      onError: (e) {
+        if (isClosed) return;
+        emit(TrackerError(e.toString()));
+      },
+    );
+  }
 
   Future<void> listenToTrackersInSeries(Series series) async {
     await _subscription?.cancel();
@@ -40,23 +59,32 @@ class TrackerCubit extends Cubit<TrackerState> {
         );
   }
 
-  Future<void> upsertTracker(IssueMerger merger, TrackerStatus selectedStatus, bool propagate) async {
-    bool deleteTracker = await _repo.trackerExists(merger.issue.id, selectedStatus);
+  Future<void> upsertTracker(
+    IssueMerger merger,
+    TrackerStatus selectedStatus,
+    bool propagate,
+  ) async {
+    bool deleteTracker = await _repo.trackerExists(
+      merger.issue.id,
+      selectedStatus,
+    );
     Operation operation = deleteTracker ? .delete : .insert;
 
-    final issueOperation = _mapper.fromNewStatus(merger.issue, selectedStatus, operation);
-    
+    final issueOperation = _mapper.fromNewStatus(
+      merger.issue,
+      selectedStatus,
+      operation,
+    );
+
     List<Reprint> reprints = [];
 
-    if(propagate){
+    if (propagate) {
       await _issuesRepo.fetchIssuesDetails(merger.issue.id);
       reprints = await _reprintRepo.getReprintsOfCollection(merger.issue.id);
     }
 
     _repo.upsertTracker(issueOperation, reprints);
   }
-
-
 
   @override
   Future<void> close() async {

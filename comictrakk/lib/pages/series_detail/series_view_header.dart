@@ -13,8 +13,6 @@ class SeriesViewHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SeriesCubit, SeriesState>(
       builder: (context, state) {
-        if (state is SeriesError) print("deltalog: error: ${state.message}");
-
         return Center(
           child: SizedBox(
             height: 150,

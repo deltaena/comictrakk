@@ -24,7 +24,10 @@ class IssueDao extends DatabaseAccessor<AppDatabase> with _$IssueDaoMixin {
 
     return (select(issues).join([
       leftOuterJoin(trackers, trackers.issueId.equalsExp(issues.id)),
-      leftOuterJoin(parentIssues, parentIssues.id.equalsExp(trackers.parentIssueId)),
+      leftOuterJoin(
+        parentIssues,
+        parentIssues.id.equalsExp(trackers.parentIssueId),
+      ),
     ])..where(predicate)).map((row) {
       final issue = row.readTable(issues);
       final tracker = row.readTableOrNull(trackers);
@@ -41,6 +44,22 @@ class IssueDao extends DatabaseAccessor<AppDatabase> with _$IssueDaoMixin {
 
       return IssueRowMerger(issue: issue);
     }).watch();
+  }
+
+  Stream<List<IssueRowMerger>> watchTrackedIssues() {
+    return select(issues)
+        .join([rightOuterJoin(trackers, trackers.issueId.equalsExp(issues.id))])
+        .map((row) {
+          final TrackerMerger trackerMerger = TrackerMerger(
+            tracker: row.readTable(trackers),
+          );
+
+          return IssueRowMerger(
+            issue: row.readTable(issues),
+            tracker: trackerMerger,
+          );
+        })
+        .watch();
   }
 
   Future<List<Issue>> getIssuesInSeries(int seriesId) =>

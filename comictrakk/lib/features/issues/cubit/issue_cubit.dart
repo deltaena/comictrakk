@@ -9,21 +9,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class IssueCubit extends Cubit<IssueState> {
   final IssueMapper _mapper = IssueMapper();
-
   final IssueRepository _repo;
+
   StreamSubscription<List<IssueRowMerger>>? _subscription;
 
   new(this._repo) : super(IssueLoading());
 
+  void watchTrackedIssues() {
+    _subscription = _repo.watchTrackedIssues().listen((issues) {
+      emit(IssueLoaded(_mapper.fromRowMergers(issues)));
+    }, onError: (e) => emit(IssueError(e.toString())));
+  }
+
   void listenToIssuesInSeries(Series series) {
-    _subscription = _repo
-        .watchIssuesInSeries(series.id)
-        .listen(
-          (issueRowMergers) {
-            emit(IssueLoaded(_mapper.fromRowMergers(issueRowMergers)));
-          },
-          onError: (e) => emit(IssueError(e.toString())),
-        );
+    _subscription = _repo.watchIssuesInSeries(series.id).listen((issues) {
+      emit(IssueLoaded(_mapper.fromRowMergers(issues)));
+    }, onError: (e) => emit(IssueError(e.toString())));
   }
 
   void fetchIssuesInSeries(Series series) {

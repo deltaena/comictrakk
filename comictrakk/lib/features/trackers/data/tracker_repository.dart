@@ -16,6 +16,7 @@ class TrackerRepository {
   Future<List<Tracker>> getAllTrackers() async => _dao.getAllTrackers();
   Future<bool> trackerExists(int issueId, TrackerStatus status) async => _dao.trackerExists(issueId, status);
 
+  Stream<List<TrackerMerger>> watchAllTrackers() => _dao.watchAllTrackers();
   Stream<List<TrackerMerger>> watchTrackersBySeries(int seriesId) =>
       _dao.watchTrackersBySeries(seriesId);
 

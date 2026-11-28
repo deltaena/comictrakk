@@ -1,6 +1,7 @@
 import 'package:comictrakk/core/constants/app_assets.dart';
 import 'package:comictrakk/core/database/app_database.dart';
 import 'package:comictrakk/core/widgets/custom_separator.dart';
+import 'package:comictrakk/core/widgets/idle_logo.dart';
 import 'package:comictrakk/core/widgets/loading_indicator.dart';
 import 'package:comictrakk/features/item_search/cubit/search_cubit.dart';
 import 'package:comictrakk/features/item_search/cubit/search_state.dart';
@@ -32,21 +33,6 @@ class SearchViewBody extends StatelessWidget {
   }
 }
 
-class IdleLogo extends StatelessWidget {
-  const IdleLogo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: SvgPicture.asset(
-        AppAssets.batmanLogo,
-        width: 110,
-        height: 110,
-        fit: BoxFit.contain,
-      ),
-    );
-  }
-}
 
 
 

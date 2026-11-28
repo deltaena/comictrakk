@@ -11,9 +11,26 @@ part 'tracker_dao.g.dart';
 class TrackerDao extends DatabaseAccessor<AppDatabase> with _$TrackerDaoMixin {
   TrackerDao(super.db);
 
-  Stream<List<Tracker>> watchAllTrackers() => select(trackers).watch();
-
   Future<List<Tracker>> getAllTrackers() async => await select(trackers).get();
+
+  Stream<List<TrackerMerger>> watchAllTrackers() {
+    final parentIssues = alias(issues, "parentIssues");
+
+    return select(trackers)
+        .join([
+          leftOuterJoin(
+            parentIssues,
+            parentIssues.id.equalsExp(trackers.parentIssueId),
+          ),
+        ])
+        .map(
+          (row) => TrackerMerger(
+            tracker: row.readTable(trackers),
+            parentIssue: row.readTableOrNull(parentIssues),
+          ),
+        )
+        .watch();
+  }
 
   Stream<List<TrackerMerger>> watchTrackersBySeries(int seriesId) {
     final parentIssues = alias(issues, "parentIssues");
