@@ -19,7 +19,7 @@ class IssueRepository {
 
   Stream<List<IssueRowMerger>> watchIssue(int issueId) => _dao.watchIssuesById(issueId);
   Stream<List<IssueRowMerger>> watchIssuesInSeries(int seriesId) => _dao.watchIssuesInSeries(seriesId);
-
+  Stream<List<IssueRowMerger>> watchTrackedIssues() => _dao.watchTrackedIssues();
 
   Future<void> fetchIssuesInSeries(int seriesId) async {
     List<Issue> cachedIssues = await _dao.getIssuesInSeries(seriesId);

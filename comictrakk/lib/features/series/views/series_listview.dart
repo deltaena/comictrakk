@@ -2,7 +2,7 @@ import 'package:comictrakk/core/database/app_database.dart';
 import 'package:comictrakk/core/widgets/custom_separator.dart';
 import 'package:comictrakk/features/series/models/series_merger.dart';
 import 'package:comictrakk/features/series/widgets/series_listview_item.dart';
-import 'package:comictrakk/features/series_detail/presentation/views/series_detail_page.dart';
+import 'package:comictrakk/pages/series_detail/series_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class SeriesListView extends StatelessWidget {

@@ -12,8 +12,8 @@ import 'package:comictrakk/features/search_results/data/search_results_repositor
 import 'package:comictrakk/features/series/cubit/series_cubit.dart';
 import 'package:comictrakk/features/series/data/series_dao.dart';
 import 'package:comictrakk/features/series/data/series_repository.dart';
-import 'package:comictrakk/features/series_detail/presentation/widgets/series_view_body.dart';
-import 'package:comictrakk/features/series_detail/presentation/widgets/series_view_header.dart';
+import 'package:comictrakk/pages/series_detail/series_view_body.dart';
+import 'package:comictrakk/pages/series_detail/series_view_header.dart';
 import 'package:comictrakk/features/trackers/cubit/tracker_cubit.dart';
 import 'package:comictrakk/features/trackers/data/tracker_dao.dart';
 import 'package:comictrakk/features/trackers/data/tracker_repository.dart';
@@ -94,20 +94,5 @@ class SeriesDetailView extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Expanded getIdleLogo() {
-    return Expanded(
-      child: SvgPicture.asset(
-        AppAssets.batmanLogo,
-        width: 110,
-        height: 110,
-        fit: BoxFit.contain,
-      ),
-    );
-  }
-
-  Center getLoadingIndicator() {
-    return Center(child: CircularProgressIndicator());
   }
 }
